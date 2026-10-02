@@ -1,0 +1,334 @@
+{
+  "status": "REPRODUCED",
+  "independent_model_fits": true,
+  "calculation_signature": "7f9ef129c2f8a9146bdd2d94b63950fc1504d4f47362b084b8dac465315b515a",
+  "result_tables_checked": 64,
+  "tables": [
+    {
+      "table": "01_Data_Cleaning.csv",
+      "rows": 8,
+      "columns": 5
+    },
+    {
+      "table": "02_IV_Grid_Summary.csv",
+      "rows": 13,
+      "columns": 2
+    },
+    {
+      "table": "03_Forecast_Performance.csv",
+      "rows": 4,
+      "columns": 21
+    },
+    {
+      "table": "04_DM_Tests.csv",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "05_MCS.csv",
+      "rows": 24,
+      "columns": 14
+    },
+    {
+      "table": "06_Economic_Signal.csv",
+      "rows": 3,
+      "columns": 23
+    },
+    {
+      "table": "07_Implementation.csv",
+      "rows": 3,
+      "columns": 13
+    },
+    {
+      "table": "08_Original_Performance.csv",
+      "rows": 6,
+      "columns": 31
+    },
+    {
+      "table": "09_Greek_Exposure.csv",
+      "rows": 63,
+      "columns": 11
+    },
+    {
+      "table": "10_Greek_Attribution.csv",
+      "rows": 12,
+      "columns": 14
+    },
+    {
+      "table": "11_DGVT_Subset.csv",
+      "rows": 15,
+      "columns": 14
+    },
+    {
+      "table": "12_Risk_Control.csv",
+      "rows": 24,
+      "columns": 28
+    },
+    {
+      "table": "13_Multiple_Testing.csv",
+      "rows": 48,
+      "columns": 11
+    },
+    {
+      "table": "14_Paired_Control_Effects.csv",
+      "rows": 12,
+      "columns": 23
+    },
+    {
+      "table": "15_Normalization.csv",
+      "rows": 24,
+      "columns": 11
+    },
+    {
+      "table": "16_Hedge_Costs.csv",
+      "rows": 30,
+      "columns": 22
+    },
+    {
+      "table": "17_Subperiods.csv",
+      "rows": 36,
+      "columns": 13
+    },
+    {
+      "table": "18_IV_Regimes.csv",
+      "rows": 36,
+      "columns": 13
+    },
+    {
+      "table": "19_Full_Chain.csv",
+      "rows": 3,
+      "columns": 18
+    },
+    {
+      "table": "20_Model_Ranks.csv",
+      "rows": 3,
+      "columns": 7
+    },
+    {
+      "table": "contract_mapping_collisions.csv",
+      "rows": 1269,
+      "columns": 13
+    },
+    {
+      "table": "diebold_mariano_results.csv",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "economic_signal_predictive_summary.csv",
+      "rows": 3,
+      "columns": 21
+    },
+    {
+      "table": "forecast_bootstrap_intervals.csv",
+      "rows": 12,
+      "columns": 8
+    },
+    {
+      "table": "forecast_metrics_by_surface_region.csv",
+      "rows": 24,
+      "columns": 8
+    },
+    {
+      "table": "forecast_model_comparison.csv",
+      "rows": 4,
+      "columns": 20
+    },
+    {
+      "table": "model_confidence_set.csv",
+      "rows": 24,
+      "columns": 14
+    },
+    {
+      "table": "rank_ic_summary.csv",
+      "rows": 4,
+      "columns": 11
+    },
+    {
+      "table": "stage3_candidate_counts_by_date.csv",
+      "rows": 427,
+      "columns": 2
+    },
+    {
+      "table": "stage3b_exit_coverage.csv",
+      "rows": 3,
+      "columns": 17
+    },
+    {
+      "table": "stage3b_quote_quality.csv",
+      "rows": 12,
+      "columns": 14
+    },
+    {
+      "table": "stage3b_raw_recovery_reasons.csv",
+      "rows": 32,
+      "columns": 6
+    },
+    {
+      "table": "stage4_bootstrap_sensitivity.csv",
+      "rows": 12,
+      "columns": 9
+    },
+    {
+      "table": "stage4_economic_calendar.csv",
+      "rows": 1269,
+      "columns": 11
+    },
+    {
+      "table": "stage4_model_return_comparison.csv",
+      "rows": 6,
+      "columns": 9
+    },
+    {
+      "table": "stage4_performance_summary.csv",
+      "rows": 6,
+      "columns": 31
+    },
+    {
+      "table": "stage4_quote_quality_pnl_sensitivity.csv",
+      "rows": 24,
+      "columns": 11
+    },
+    {
+      "table": "stage4_quote_source_attribution.csv",
+      "rows": 6,
+      "columns": 11
+    },
+    {
+      "table": "stage4_signal_pnl_correlations.csv",
+      "rows": 15,
+      "columns": 6
+    },
+    {
+      "table": "stage4_transaction_cost_wedge.csv",
+      "rows": 3,
+      "columns": 15
+    },
+    {
+      "table": "stage5_bootstrap_sensitivity.csv",
+      "rows": 48,
+      "columns": 10
+    },
+    {
+      "table": "stage5_dgvt_subset_summary.csv",
+      "rows": 15,
+      "columns": 14
+    },
+    {
+      "table": "stage5_exposure_reduction.csv",
+      "rows": 24,
+      "columns": 11
+    },
+    {
+      "table": "stage5_greek_exposure_summary.csv",
+      "rows": 63,
+      "columns": 11
+    },
+    {
+      "table": "stage5_greek_quality.csv",
+      "rows": 3,
+      "columns": 15
+    },
+    {
+      "table": "stage5_performance_summary.csv",
+      "rows": 24,
+      "columns": 28
+    },
+    {
+      "table": "stage5_pnl_attribution_summary.csv",
+      "rows": 12,
+      "columns": 14
+    },
+    {
+      "table": "stage5_signal_alignment.csv",
+      "rows": 24,
+      "columns": 6
+    },
+    {
+      "table": "stage5_underlying_spot_consistency.csv",
+      "rows": 418,
+      "columns": 7
+    },
+    {
+      "table": "stage5_vega_balance_diagnostics.csv",
+      "rows": 3,
+      "columns": 10
+    },
+    {
+      "table": "stage6_bootstrap_inference_sensitivity.csv",
+      "rows": 48,
+      "columns": 10
+    },
+    {
+      "table": "stage6_full_chain_summary.csv",
+      "rows": 3,
+      "columns": 18
+    },
+    {
+      "table": "stage6_greek_component_inference.csv",
+      "rows": 12,
+      "columns": 15
+    },
+    {
+      "table": "stage6_hedge_cost_break_even.csv",
+      "rows": 6,
+      "columns": 15
+    },
+    {
+      "table": "stage6_hedge_cost_stress.csv",
+      "rows": 24,
+      "columns": 9
+    },
+    {
+      "table": "stage6_inference_sensitivity.csv",
+      "rows": 72,
+      "columns": 15
+    },
+    {
+      "table": "stage6_iv_regime_stability.csv",
+      "rows": 36,
+      "columns": 13
+    },
+    {
+      "table": "stage6_model_ranking.csv",
+      "rows": 3,
+      "columns": 7
+    },
+    {
+      "table": "stage6_multiple_testing.csv",
+      "rows": 48,
+      "columns": 11
+    },
+    {
+      "table": "stage6_normalization_sensitivity.csv",
+      "rows": 24,
+      "columns": 11
+    },
+    {
+      "table": "stage6_paired_bootstrap_sensitivity.csv",
+      "rows": 24,
+      "columns": 11
+    },
+    {
+      "table": "stage6_quote_source_check.csv",
+      "rows": 6,
+      "columns": 11
+    },
+    {
+      "table": "stage6_risk_control_effects.csv",
+      "rows": 12,
+      "columns": 23
+    },
+    {
+      "table": "stage6_subperiod_stability.csv",
+      "rows": 36,
+      "columns": 13
+    }
+  ],
+  "numerical_comparisons_passed": 4042,
+  "failures": 0,
+  "first_run_seconds": 1679.6892181998119,
+  "second_run_seconds": 936.7496021999978,
+  "absolute_tolerance": 1e-10,
+  "environment": "Windows 11 x64; Python 3.12.6; pinned requirements"
+}

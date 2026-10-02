@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/06_economic_performance.py."""
+"""Contract PnL, premiums, and daily performance."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

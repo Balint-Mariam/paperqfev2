@@ -1,4 +1,4 @@
-"""Frozen functions extracted from iv.py."""
+"""European option pricing and bounded implied-volatility inversion."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

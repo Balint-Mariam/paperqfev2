@@ -1,10 +1,32 @@
-# QFE replication
+# Replication instructions
 
-**Current certification: STOP — ANALYSIS REPRODUCTION FAILURE.** Stage 1 passes
-the numerical data checks, but tiny upstream value differences materially change
-fresh ARIMA fits. See `REPRODUCTION_REVIEW_REQUIRED.md` before using these results.
+This package runs the complete sequence from raw option observations to forecasting,
+contract execution, Greek attribution, risk controls, and statistical evaluation.
+The empirical definitions and the relationship between inputs and outputs are in
+[METHODOLOGY.md](METHODOLOGY.md).
 
-Run from `replication/` with Python **3.12.6** in the pinned environment:
+## Files
+
+- `01_build_clean_iv_data.py`: cleaning, implied volatility, and the IV grid.
+- `02_run_full_paper_analysis.py`: forecasting and the complete economic analysis.
+- `config/replication_config.json`: paths and the fixed empirical specification.
+- `inputs/`: the raw options CSV, rate/dividend CSV, and four source workbooks.
+- `src/`: functions called by the two entry points.
+- `tests/`: independent numerical and timing checks.
+- `outputs/data/`: generated datasets, including intermediate contract records.
+- `outputs/tables/`: numerical result tables and workbook CSV counterparts.
+- `outputs/excel/QFE_Full_Results.xlsx`: 23 plain numerical worksheets.
+- `outputs/figures/`: figures generated from the numerical results.
+- `outputs/diagnostics/`: input identities, runtime environments, and automated checks.
+- `manifests/`: the empirical specification and historical comparison targets.
+
+## Environment and execution
+
+Reference environment: **Windows 11 x64, Python 3.12.6**, with the exact package
+versions in `requirements.txt`. The recorded numerical environment is supplied
+in `outputs/diagnostics/stage2_environment.json`.
+
+Installation and execution:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -13,15 +35,16 @@ py -3.12 -m venv .venv
 .venv\Scripts\python 02_run_full_paper_analysis.py --workers 4
 ```
 
-On other systems use the environment's `python` executable. These are the only
-two required analysis entry points. Installing dependencies is environment setup.
-The original workspace and `paper_qfe/` are never written by this package.
+On other systems use the environment's `python` executable. Run these commands
+from this package directory. The input paths already point inside `inputs/`.
+A new execution creates logs and content-identified caches as needed; neither
+is required in the download. Avoid setting `OMP_NUM_THREADS`; OpenBLAS and MKL
+use one thread during the analysis. Platform and dependency versions are recorded.
 
-## Inputs and configuration
+## Configuration
 
-`config/replication_config.json` contains the locked specification and input paths.
-Relative configuration paths resolve against this package directory. CLI path
-overrides resolve against the caller's working directory:
+Paths in the JSON configuration resolve against this package directory. CLI
+path overrides resolve against the caller's working directory:
 
 ```text
 --raw-options-file PATH
@@ -33,97 +56,40 @@ overrides resolve against the caller's working directory:
 --force
 ```
 
-Raw inputs are CSV files: `options_eod_all.csv` and `div yield and rfr.csv`.
-The default paths locate them in `inputs/` inside this package. Keep their column names and
-quote fields intact. The source options contain the labelled 15:45 option and
-underlying books, expiration, strike, option type, volume, and open interest.
-The rate file supplies exact calendar dates, daily dividend yields, and six
-maturity rates. No extra rate dates are fabricated. No input conversion to Excel
-is required. The installed dependency versions and actual platform are recorded
-for every execution. Set no `OMP_NUM_THREADS` override: the certified XGBoost
-context has that variable unset; OpenBLAS/MKL use one thread during analysis.
+The locked empirical fields are checked against `manifests/locked_specification.json`.
+Changing file paths or worker counts does not change the empirical design. `--force`
+recomputes generated checkpoints. The package-local expected grid files are selected by `--reference-root` when
+checking a repeated upstream build. No external workspace is required.
 
-The four original source workbooks are also copied into `inputs/` for inspection.
-The scripts consume the two CSV files directly; the workbooks are supporting
-source material. `inputs/INPUTS_MANIFEST.json` records their roles, sizes, and
-SHA256 hashes. Original workspace files are preserved. The raw options archive
-is approximately 9.15 GB; all six input files must accompany a portable handoff.
-Optional historical comparisons under `reference_root` are not required inputs.
+## Verification
 
-## Stage 1
-
-Stage 1 scans all raw observations, records the sequential cleaning funnel,
-inverts prices with the frozen Brent bracket/tolerance, and interpolates the
-25-by-20 grid. Working option data use Parquet. Historical clean/IV CSV numeric
-parsing boundaries are retained in memory so serialization does not change model
-inputs. `scipy.special.ndtr` calls the same normal-CDF implementation used by
-`scipy.stats.norm.cdf`; the certified pricing arithmetic and root solver are
-unchanged. Its equality check is included in the tests.
-
-Outputs include `data/options_clean.parquet`, `data/options_with_iv.parquet`,
-`data/iv_grid_{wide,long,map,day_stats}.{csv,parquet}`, row counters, IV statuses,
-cleaning funnel, full-value comparisons, and the upstream manifest. Failed
-inversions remain NaN. Invalid inputs rejected by the historical IV function are
-counted separately. A failed numerical comparison closes the analysis gate.
-Optional original upstream CSV files under `reference_root` provide independent
-full-row comparisons. Reference-only compact final-result fixtures are bundled
-under `manifests/reference_results/`; they are used exclusively for comparisons.
-
-## Stage 2
-
-Stage 2 verifies Stage 1 hashes and its reproduction gate, then directly runs the
-corrected XNYS h1/h2 design. It fits the certified model candidates, creates the
-target-independent signal intersection, maps contracts using entry observations,
-nets collisions, and extracts exact exit books. Processed exits take priority;
-the raw archive supplies exact-date/key recovery without volume/OI/IV/spread
-eligibility filters. A single targeted raw scan is cached by input content and
-required pairs. Full original and four-state premium-normalized portfolios,
-Greek attribution, inference, corrections, and robustness tables are recomputed.
-
-`outputs/excel/QFE_Full_Results.xlsx` has 23 ordered worksheets with plain cells,
-numeric values, and no charts, colors, merged cells, or decorative borders.
-Each sheet is mirrored to `outputs/tables/<sheet-name>.csv`. Raw option records
-remain outside Excel. `outputs/diagnostics/replication_final_comparison.csv`
-contains reference/new/difference/tolerance/status fields. Numerical failures
-return a nonzero exit code and are retained in diagnostics.
-
-## Caches and manifests
-
-Cache partitions include source SHA256, the effective locked configuration,
-code identity, dependencies, and the OpenMP context where applicable. Completion
-manifests verify checkpoint contents before reuse. `--force` recomputes the
-generated checkpoints. No reference result table is a computational input.
-Without cached fits, a complete model run can take substantial time; interrupted
-completed node checkpoints can be reused by the same code/configuration.
-Optional historical fitted states are reused only after their content hashes,
-versions, fitting functions, and bit-identical model inputs are verified; all
-predictions are regenerated. A raw-data/code-only handoff fits models directly.
-
-`manifests/method_source_provenance.json` identifies the original functions and
-source hashes. `REPLICATION_DELIVERY_MANIFEST.json` hashes the entry points,
-helpers, requirements, configuration, tests, workbook, outputs, and logs.
-The embedded Excel file inventory excludes its own workbook and inventory files
-to avoid circular hashes; the external delivery manifest hashes these artifacts.
-
-## Tests
-
-From this directory:
-
-```text
-python -B -m unittest discover -s tests -v
+```powershell
+.venv\Scripts\python -B -m unittest discover -s tests -v
 ```
 
-Tests require no raw options archive. They include independently calculated
-pricing/accounting examples, missing/future-data mutations, calendar exclusions,
-entry-only mapping and controls, finite-difference Greeks, normalization,
-multiple-testing calculations, and corrupted-cache rejection.
+Unit tests require no raw options archive. They check pricing, chronology,
+future-data independence, contract mapping, PnL accounting, Greek controls,
+normalization, inference, and rejection of corrupted caches.
 
-## Public distribution
+`inputs/INPUTS_MANIFEST.json` provides the unchanged input checksums.
+`REPLICATION_DELIVERY_MANIFEST.json` inventories the package. Runtime checks and
+numerical comparisons are written to `outputs/diagnostics/`. A failed required
+check produces a nonzero process exit code. The workbook records actual run statuses. Expected tables are produced by a
+complete package execution and checked by an independent rerun.
 
-Repository: https://github.com/Balint-Mariam/paperqfev2
+## Download
 
-The complete package, including raw data and caches, is supplied as a release
-archive. The Git checkout includes code, supporting source workbooks, rates,
-result tables, and audit evidence. Download and extract the release for the raw
-options input. The default `reference_root` is the package itself; historical
-workspace comparisons can be enabled with `--reference-root PATH`.
+The complete package is provided at:
+https://github.com/Balint-Mariam/paperqfev2/releases/tag/replication-package-v2
+
+The repository checkout includes the code, source spreadsheets, rate input, and
+result tables. Obtain the release archive to include the large raw options CSV
+and generated datasets. Follow the release's `DOWNLOAD_REPLICATION.md` to verify
+and extract both archive parts into an empty directory.
+
+The reference release passed 43 unit tests, 20 implementation checks, and 4,042
+numerical comparisons. All 64 comparable result CSVs matched an independent
+model refit within 1e-10. `outputs/diagnostics/reproducibility.json` records this
+verification. The recorded calculation times were approximately 28 minutes for
+the complete fresh run and 16 minutes for the independent refit with verified
+quote-input caches. Runtime depends on the machine.

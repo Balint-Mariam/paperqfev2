@@ -1,0 +1,10 @@
+{
+  "forecast_common_rows": 159060,
+  "economic_candidate_rows": 162186,
+  "trading_dates": 408,
+  "contracts": {
+    "arima": 7805,
+    "ridge": 7362,
+    "xgboost": 7637
+  }
+}

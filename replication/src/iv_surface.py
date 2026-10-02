@@ -1,4 +1,4 @@
-"""Frozen functions extracted from build_iv_grid_dataset.py."""
+"""Daily log-moneyness/maturity IV interpolation."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

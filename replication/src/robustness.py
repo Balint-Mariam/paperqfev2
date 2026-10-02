@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/08_final_robustness.py."""
+"""Statistical inference, multiple testing, and sensitivity analyses."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path
@@ -122,7 +122,7 @@ def iv_regimes(decisions):
     if test.market_IV_level.isna().any():raise ValueError('Missing decision-time surface regime label; no imputation')
     test['IV_regime']=np.where(test.market_IV_level.le(threshold),'LOW_IV','HIGH_IV')
     info=dict(threshold=threshold,cutoff=str(cutoff.date()),pretest_n_dates=len(pre),pretest_first_date=str(pre.decision_date.min().date()),pretest_last_date=str(pre.decision_date.max().date()),
-        rule='daily cross-sectional median frozen observed IV; threshold pre-test median through validation cutoff; LOW<=threshold, HIGH>threshold',surface_sha256=digest(ROOT/'iv_grid_wide.csv'))
+        rule='daily cross-sectional median observed IV; threshold pre-test median through validation cutoff; LOW<=threshold, HIGH>threshold',surface_sha256=digest(ROOT/'iv_grid_wide.csv'))
     return test,info,levels
 
 def inference_sensitivity(daily):
@@ -170,15 +170,5 @@ def figures(forecast,chain,attr,daily,baseline):
             for suffix,style in [('mid','-'),('exec','--')]:ax.plot(d.exit_date,np.cumsum(d['Return_'+suffix]),color=color,linestyle=style,label=state.replace('_',' ')+' '+('MID' if suffix=='mid' else 'BID/ASK'))
         ax.set_title(model.upper());ax.tick_params(axis='x',rotation=30);ax.grid(axis='y',alpha=.2)
     axes[0].set_ylabel('Cumulative arithmetic normalized return');axes[-1].legend(frameon=False,fontsize=7);finish(fig,'stage6_main_original_vs_delta_neutral.png')
-    text='''# Stage6 figure manifest
-
-Exactly four candidate main-text figures are created, all from frozen data:
-
-1. stage6_main_forecast_performance.png — common-sample RMSE point estimates. Supports the forecast comparison; no dominance claim.
-2. stage6_main_implementation_funnel.png — fixed signal days, calendar eligibility and BASE pricing, alongside ORIGINAL MID/BID_ASK means. Shows implementation coverage and friction; exclusions are calendar-only.
-3. stage6_main_greek_attribution.png — full-sample DGT aggregate components; residual is not pure Vega PnL.
-4. stage6_main_original_vs_delta_neutral.png — all models, MID and BID_ASK, ORIGINAL and static Delta proxy. Dashed curves are option bid/ask; hedged curves include an uncosted underlying proxy. Cumulative values are arithmetic premium-normalized returns, not margin-capital wealth.
-
-Appendix: the six existing Stage5 figures for Vega exposure and all four states, and Stage2 regional/diagnostic figures. Supplement: existing quote/mapping/audit figures. No prior figure is modified. Color/line style is consistent and no decorative plots are added.
-'''
-    (HERE/'reports/stage6_figure_manifest.md').write_text(text,encoding='utf-8')
+    text='# Figures\n\nThe four main figures show forecast performance, the contract implementation\nfunnel, Greek attribution, and original versus Delta-neutral portfolio returns.\nAll figures use the generated numerical tables. Cumulative return curves are\narithmetic sums of premium-normalized daily returns. MID and BID/ASK conventions\nare shown separately; the base underlying hedge uses the stated static price proxy.\n'
+    (HERE/'reports/figure_guide.md').write_text(text,encoding='utf-8')

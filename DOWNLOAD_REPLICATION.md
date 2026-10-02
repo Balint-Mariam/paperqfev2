@@ -1,22 +1,22 @@
 # Download and verify the complete replication package
 
-Release: https://github.com/Balint-Mariam/paperqfev2/releases/tag/replication-package-v1
+Release: https://github.com/Balint-Mariam/paperqfev2/releases/tag/replication-package-v2
 
 1. Download `RELEASE_ASSETS_MANIFEST.json` and every archive file listed below
    into the same empty directory. Do not rename the files.
 2. From that directory, run the Python command below. It verifies every part,
    joins split parts if necessary, verifies the complete archive, and extracts
    `replication/`. Extraction restores the raw options CSV, all six original
-   inputs, generated data, execution caches, code, and audit evidence.
+   inputs, generated data, code, and automated verification files.
 3. Follow `replication/README_REPLICATION.md` to install dependencies and run.
 
-The complete archive needs approximately 10.3 GB after extraction. Allow space
-for the downloaded archive and the assembled ZIP as well (at least 20 GB free). Stage 2 remains numerically uncertified.
+The complete archive needs approximately 10 GB after extraction. Allow space
+for the downloaded archive and the assembled ZIP as well (at least 20 GB free). Results are checked by an independent fresh fit and analysis.
 
 ## Archive files
 
 - `QFE_replication_full.zip.part001` (1,900,000,000 bytes)
-- `QFE_replication_full.zip.part002` (1,049,372,966 bytes)
+- `QFE_replication_full.zip.part002` (936,322,824 bytes)
 
 ## Verify and extract (Python 3.12)
 

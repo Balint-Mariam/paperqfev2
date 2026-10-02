@@ -1,4 +1,4 @@
-"""Reconstruct and verify raw -> clean -> IV -> surface."""
+"""Build cleaned option observations, implied volatility, and daily IV grids."""
 import sys
 sys.dont_write_bytecode = True
 for stream in [sys.stdout,sys.stderr]:

@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/02_repair_timing_and_signals.py."""
+"""Entry-time node-to-contract mapping and signed netting."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path
@@ -20,7 +20,7 @@ XGB_BASE=dict(objective='reg:squarederror',tree_method='hist',random_state=42,n_
 
 
 def features(series, calendar, horizon):
-    """Origin-indexed legacy lag architecture. No target series is referenced.
+    """Origin-indexed lag architecture. No target series is referenced.
 
 Legacy target-row lag 1 is origin IV; 2,3,5,10 are origin lags 1,2,4,9.
 Missing features remain native XGBoost missing values; there is no imputation.
@@ -36,7 +36,7 @@ The horizon's future weekday is deterministic calendar information.
     return frame
 
 def fit_forecasts(wide, calendar, origins, train_end, fit_end, cache):
-    """Direct h=1 and h=2 levels, target-date split boundaries and frozen fits.
+    """Direct h=1 and h=2 levels, target-date split boundaries and fixed fits.
 
 Only HISTORICAL finite labels filter training/validation. Prediction row creation
 uses all origins regardless of future labels, which are never passed to predict.

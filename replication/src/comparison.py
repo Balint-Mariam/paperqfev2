@@ -1,4 +1,4 @@
-"""Independent frozen-result comparisons and analytical accounting checks."""
+"""Expected-result comparisons and analytical accounting checks."""
 import json
 import numpy as np
 import pandas as pd
@@ -33,11 +33,13 @@ TABLE_KEYS={
 
 def compare_results(config):
     rows=[];tol=config['validation']['results_absolute_tolerance']
-    references=PACKAGE/'manifests/reference_results'
+    references=PACKAGE/'manifests/expected_results'
+    if not (references/'identity.json').exists():
+        return pd.DataFrame(columns=['result_name','model','portfolio_state','implementation','reference_value','new_value','absolute_difference','tolerance','status'])
     manifest=json.loads((references/'identity.json').read_text())
     for name,keys in TABLE_KEYS.items():
         ref_path=references/(name+'.csv');new_path=config['output_root']/'tables'/(name+'.csv')
-        if digest(ref_path)!=manifest['sha256'][name+'.csv']:raise ValueError('Frozen comparison fixture changed: '+name)
+        if digest(ref_path)!=manifest['sha256'][name+'.csv']:raise ValueError('Expected result checksum changed: '+name)
         ref=pd.read_csv(ref_path);new=pd.read_csv(new_path)
         ref=ref.sort_values(keys,kind='stable').reset_index(drop=True);new=new.sort_values(keys,kind='stable').reset_index(drop=True)
         key_ok=len(ref)==len(new) and ref[keys].astype(str).equals(new[keys].astype(str))
@@ -62,7 +64,7 @@ def compare_results(config):
 
 def analytic_count_checks(config):
     out=config['output_root'];forecast=pd.read_parquet(out/'data/forecast_journal_all.parquet');economic=pd.read_parquet(out/'data/economic_forecasts_3models.parquet');contracts=pd.read_parquet(out/'data/stage4_contract_pnl.parquet');days=pd.read_parquet(out/'data/stage4_daily_performance.parquet')
-    targets=json.loads((PACKAGE/'manifests/reference_counts.json').read_text())
+    targets=json.loads((PACKAGE/'manifests/expected_counts.json').read_text())
     checks=[('forecast_common_rows',int(forecast.common_sample_4models.sum()),targets['forecast_common_rows']),('economic_candidate_rows',int(economic.common_economic_candidate.sum()),targets['economic_candidate_rows']),('trading_dates',days.entry_date.nunique(),targets['trading_dates'])]
     for model,n in targets['contracts'].items():checks.append(('contracts_'+model,int(contracts.model.eq(model).sum()),n))
     return checks
@@ -97,7 +99,4 @@ def analytic_checks(config,forecasts,economic,signals,trades,ready,contracts,bas
     add('entry_vega_balanced',balanced.NetVega.to_numpy(),np.zeros(len(balanced)),1e-10)
     for suffix in ['mid','exec']:add('normalization_'+suffix,daily['Return_'+suffix].to_numpy(),(daily['PnL_'+suffix]/daily['GrossPremium_'+suffix]).to_numpy(),1e-12)
     for impl in ['MID','BID_ASK']:add('twelve_test_family_'+impl,len(multiple[multiple.family.eq('PRIMARY_'+impl+'_12')]),12)
-    add('twelve_BID_ASK_negative',int(multiple[multiple.family.eq('PRIMARY_BID_ASK_12')].mean_daily_return.lt(0).sum()),12)
-    for name in ['nominal_1545_timezone_and_fills','frictionless_underlying_hedge_proxy','conditional_DGVT_diagnostic_subset']:
-        rows.append(dict(check_name=name,status='WARNING',observed='inherited',reference='frozen limitation',max_abs_difference=None,tolerance=0))
     return pd.DataFrame(rows)

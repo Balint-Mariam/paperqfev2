@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/03_forecast_evaluation.py."""
+"""Fixed-window model selection and one-session forecasting."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

@@ -101,9 +101,9 @@ def export_results(config,info,stage1,stage2):
 
 def delivery_manifest(config):
     out=config['output_root'];paths=set()
-    for folder in [PACKAGE/'src',PACKAGE/'config',PACKAGE/'tests',PACKAGE/'manifests',out]:
+    for folder in [PACKAGE/'src',PACKAGE/'config',PACKAGE/'tests',PACKAGE/'manifests',PACKAGE/'inputs',out]:
         paths.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts)
-    paths.update([PACKAGE/'01_build_clean_iv_data.py',PACKAGE/'02_run_full_paper_analysis.py',PACKAGE/'requirements.txt',PACKAGE/'README_REPLICATION.md',PACKAGE/'REPRODUCTION_REVIEW_REQUIRED.md'])
+    paths.update([PACKAGE/'01_build_clean_iv_data.py',PACKAGE/'02_run_full_paper_analysis.py',PACKAGE/'requirements.txt',PACKAGE/'README_REPLICATION.md',PACKAGE/'METHODOLOGY.md'])
     inventory=[]
     for p in sorted(paths):
         try:relative=str(p.relative_to(PACKAGE))

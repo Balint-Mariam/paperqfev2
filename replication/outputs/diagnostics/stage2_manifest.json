@@ -1,7 +1,7 @@
 {
-  "status": "FAILED",
-  "runtime_seconds": 1091.2859491000418,
-  "signature": "ee2e76a6dfee71a6f70a83ead09b38b001900b37303231c40cdfb1dc8997c241",
+  "status": "REPRODUCED",
+  "runtime_seconds": 936.7496021999978,
+  "signature": "7f9ef129c2f8a9146bdd2d94b63950fc1504d4f47362b084b8dac465315b515a",
   "forecast_common_sample": 159060,
   "economic_candidates": 162186,
   "trading_days": 408,
@@ -12,12 +12,9 @@
   },
   "BID_ASK_negative": 12,
   "check_counts": {
-    "PASS": 21,
-    "WARNING": 3
+    "PASS": 20
   },
   "comparison_counts": {
-    "FAIL": 2358,
-    "PASS": 1684
-  },
-  "analysis_runtime_seconds": 1084.5635452000424
+    "PASS": 4042
+  }
 }

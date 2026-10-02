@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/07_greek_attribution_and_risk_control.py."""
+"""Entry Greeks, attribution, and Delta/Vega portfolio rules."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path
@@ -104,7 +104,7 @@ def attribution(c,spots,processed):
     compatible &= np.isclose(out.processed_exit_mid,out.exit_mid,rtol=0,atol=1e-10)&np.isclose(out.processed_exit_bid,out.exit_bid,rtol=0,atol=1e-10)&np.isclose(out.processed_exit_ask,out.exit_ask,rtol=0,atol=1e-10)
     compatible &= np.isclose(out.entry_T-out.processed_exit_T,out.dt_years,rtol=0,atol=1e-10)
     compatible &= out.entry_source_observation_count.eq(1)&out.processed_exit_source_observation_count.eq(1)
-    # Reprice frozen IVs under their source model; never invert a price for new IV.
+    # Reprice observed IVs under their source model; never invert a price for new IV.
     out['entry_IV_repricing_error']=(european_price(out.entry_spot,out.strike,out.entry_T,out.entry_r,out.entry_q,out.entry_implied_vol,out.option_type.eq('C'))-out.entry_mid).abs()
     out['exit_IV_repricing_error']=(european_price(out.exit_spot,out.strike,out.processed_exit_T,out.processed_exit_r,out.processed_exit_q,out.processed_exit_implied_vol,out.option_type.eq('C'))-out.exit_mid).abs()
     compatible &= out.entry_IV_repricing_error.le(IV_PRICE_TOL)&out.exit_IV_repricing_error.le(IV_PRICE_TOL)

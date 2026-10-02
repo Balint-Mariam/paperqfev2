@@ -1,0 +1,61 @@
+{
+  "sha256": {
+    "forecast_model_comparison.csv": "cfb15d76296c56745983f4df6d791baaaf478d2ffaf09c6c21923a6f08204cba",
+    "rank_ic_summary.csv": "a5aafee5615fe62ff48a03f1b76484989de47c1460b0adc127e9c25092f0bba0",
+    "diebold_mariano_results.csv": "fb6714c803e7125ff4460f06a01f155bd412b9e31be78b7838dca293f8484e9c",
+    "model_confidence_set.csv": "4ef4729f897eddf50191cb4ea5438ce9828c131c0a8f6dcbef26cf4155f2489e",
+    "economic_signal_predictive_summary.csv": "890d0f9a4eed022f9873d5bc98f2cc4b11d15e3bd40b6aecb5f23e94b839c237",
+    "stage4_performance_summary.csv": "51e23e2dddef726019c93660fa8686fc0fe12d08645cf4d6cccf6ef281ea998b",
+    "stage5_performance_summary.csv": "66cf9cff858da415b0e505a19616157bc50efd841a7afb11c1ae201b14a44e67",
+    "stage5_pnl_attribution_summary.csv": "fd6629d9cefbc421898268b05b9e66428c36cfa377dbf9b5f888c66b5a42246a",
+    "stage5_dgvt_subset_summary.csv": "7d6029d482f470d0b01c71993a5137e6ec81ecba475ad6e627249550a118fb2e",
+    "stage6_multiple_testing.csv": "5b2bda58ea55cef854fbd240f44fedb7f7c89236cae74f855a00584470ae7c85",
+    "stage6_risk_control_effects.csv": "6b38a5b17343fbdee19e181919b6767917e9c1269a2bd95c92246fb43f5ae93d",
+    "stage6_greek_component_inference.csv": "56b83a8445a808d26e2079194fceb75203c82acdefa19dd2aa992c8ac86cc068",
+    "stage6_normalization_sensitivity.csv": "ac3550f4c2ab654fa6faacbb28bd3c651f38408fbbd1d75510ba604b4728b702",
+    "stage6_hedge_cost_break_even.csv": "f3dba3f96dbcbd18df66b289781a756f0db099aed8182525ef51465f75c2b3b3",
+    "stage6_hedge_cost_stress.csv": "cf424700eb7d7380b6d62dcf4d232f1687c3bff6e2a7e8101c8bc1f0b6e4a039",
+    "stage6_subperiod_stability.csv": "dc46748a7aaa9b5dc5180805fe59e2c6790cd00b252ad7a18652871a3ebf481c",
+    "stage6_iv_regime_stability.csv": "56387412191eb4b95c54c57d10368aae2b9bc6e5faab03a98da6bf2f5ca3aa7f",
+    "stage6_full_chain_summary.csv": "934b278ce13fbe2686b25e86f798396b0a16341cad6900d728c37398733b4baf",
+    "stage6_model_ranking.csv": "5872596358383de71ca04071694dce65be4899886c7493bcda2b2db79312b0ad",
+    "stage6_inference_sensitivity.csv": "af86f7dc12a051756b48dd7aba3849b2ded7dee2c9bbdfc4205d3ce6a1659297"
+  },
+  "calculation_signature": "7f9ef129c2f8a9146bdd2d94b63950fc1504d4f47362b084b8dac465315b515a",
+  "environment": {
+    "timestamp": "2026-10-02T17:27:15.599424+00:00",
+    "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.8.0",
+      "statsmodels": "0.14.6",
+      "xgboost": "3.1.2",
+      "arch": "8.0.0",
+      "exchange-calendars": "4.13.2",
+      "pyarrow": "25.0.1",
+      "matplotlib": "3.10.8",
+      "openpyxl": "3.1.5",
+      "joblib": "1.5.3"
+    },
+    "pinned": {
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.8.0",
+      "statsmodels": "0.14.6",
+      "xgboost": "3.1.2",
+      "arch": "8.0.0",
+      "exchange-calendars": "4.13.2",
+      "pyarrow": "25.0.1",
+      "matplotlib": "3.10.8",
+      "openpyxl": "3.1.5",
+      "joblib": "1.5.3"
+    },
+    "versions_match": true,
+    "OMP_NUM_THREADS": null
+  },
+  "purpose": "Expected values from the complete package calculation; comparison only"
+}

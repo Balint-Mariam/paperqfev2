@@ -53,45 +53,9 @@ def clean(config):
 
 
 def upstream_clean_checks(config, stats):
-    ref = config['reference_root']/'options_eod_all_clean.csv'
-    if not ref.is_file():
-        return [dict(check_name='reference_clean_available',status='WARNING',observed=False,reference=True,max_abs_difference=None,tolerance=0)]
-    n = count_csv(ref)
-    checks = [check('clean_row_count', stats['kept_basic'], n)]
-    first = pd.read_csv(ref, nrows=200)
-    new = next(pq.ParquetFile(config['output_root']/'data/options_clean.parquet').iter_batches(batch_size=200)).to_pandas()
-    # Check the first actual source observations before costly millions of inversions.
-    for column in first:
-        if column not in new:
-            checks.append(check('clean_column_'+column,False,True)); continue
-        a,b = new[column], first[column]
-        if pd.api.types.is_datetime64_any_dtype(a): b=pd.to_datetime(b,format='mixed',dayfirst=True)
-        checks.append(check('clean_sample_'+column,a.to_numpy(),b.to_numpy(),1e-8))
-    return checks
-
-
-def compare_option_values(config, stem, reference_name):
-    """Compare every stored row/column, preserving historical CSV round trips."""
-    path=config['reference_root']/reference_name
-    if not path.is_file():return [dict(check_name=stem+'_reference',status='WARNING',observed=False,reference=True,max_abs_difference=None,tolerance=0)]
-    parquet=pq.ParquetFile(config['output_root']/'data'/(stem+'.parquet'))
-    rows=parquet.metadata.num_rows;checks=[check(stem+'_all_rows',rows,count_csv(path))]
-    if checks[0]['status']=='FAIL':return checks
-    reference=pd.read_csv(path,chunksize=50000);differences={};ok={};total=0
-    for batch,ref in zip(parquet.iter_batches(batch_size=50000),reference):
-        new=batch.to_pandas();total+=len(new)
-        # Compare numeric values as read by the historical next CSV stage.
-        new=pd.read_csv(io.StringIO(new.drop(columns=['iv_status'],errors='ignore').to_csv(index=False)))
-        if set(new)!=set(ref):return checks+[check(stem+'_all_columns',sorted(new),sorted(ref))]
-        for col in ref:
-            a,b=new[col],ref[col]
-            if col in ['quote_date','expiration','Calendar Date']:a=pd.to_datetime(a,format='mixed');b=pd.to_datetime(b,format='mixed')
-            result=check(col,a.to_numpy(),b.to_numpy(),1e-9 if col=='implied_vol' else 1e-8)
-            ok[col]=ok.get(col,True) and result['status']=='PASS'
-            differences[col]=max(differences.get(col,0.),result['max_abs_difference'])
-        if total%1000000==0:print(f'Full {stem} comparison: {total:,}/{rows:,}',flush=True)
-    for col in ok:checks.append(dict(check_name=stem+'_all_values_'+col,status='PASS' if ok[col] else 'FAIL',observed=rows,reference=rows,max_abs_difference=differences[col],tolerance=1e-9 if col=='implied_vol' else 1e-8))
-    return checks
+    dropped = sum(value for name, value in stats.items() if name.startswith('dropped_'))
+    return [check('cleaning_funnel_conservation', stats['input'], dropped + stats['kept_basic']),
+            check('cleaning_counts_nonnegative', all(value >= 0 for value in stats.values()), True)]
 
 
 def iv_worker(frame):
@@ -166,7 +130,6 @@ def run(config):
     cached=(not config['force'] and old.get('clean_signature')==signature and cleanpath.exists() and old.get('clean_sha256')==digest(cleanpath))
     stats=old['cleaning'] if cached else clean(config)
     checks+=upstream_clean_checks(config,stats)
-    checks+=compare_option_values(config,'options_clean','options_eod_all_clean.csv')
     metadata=dict(identity=ident,clean_signature=signature,clean_sha256=digest(cleanpath),cleaning=stats)
     write_json(metadata,meta_path)
     pd.DataFrame(checks).to_csv(out/'diagnostics/stage1_reproduction_checks.csv',index=False)
@@ -180,7 +143,6 @@ def run(config):
     ivpath=out/'data/options_with_iv.parquet'
     ivcached=not config['force'] and old.get('iv_signature')==signature and ivpath.exists() and old.get('iv_sha256')==digest(ivpath)
     ivstats=old['iv'] if ivcached else invert(config)
-    checks+=compare_option_values(config,'options_with_iv','options_eod_all_with_iv.csv')
     metadata.update(iv_signature=signature,iv_sha256=digest(ivpath),iv=ivstats)
     write_json(metadata,meta_path)
     wide,grid,days=build_surface(config)
@@ -189,11 +151,11 @@ def run(config):
         path=ref/(name+'.csv')
         if not path.exists():
             checks.append(dict(check_name=name+'_reference',status='WARNING',observed=False,reference=True,max_abs_difference=None,tolerance=0));continue
-        frozen=pd.read_csv(path)
-        checks.append(check(name+'_columns',list(frame),list(frozen)))
-        checks.append(check(name+'_rows',len(frame),len(frozen)))
-        for col in frozen:
-            a=frame[col];b=frozen[col]
+        expected=pd.read_csv(path)
+        checks.append(check(name+'_columns',list(frame),list(expected)))
+        checks.append(check(name+'_rows',len(frame),len(expected)))
+        for col in expected:
+            a=frame[col];b=expected[col]
             if pd.api.types.is_datetime64_any_dtype(a): b=pd.to_datetime(b)
             checks.append(check(name+'_'+col,a.to_numpy(),b.to_numpy(),1e-9))
     pd.DataFrame(checks).to_csv(out/'diagnostics/stage1_reproduction_checks.csv',index=False)

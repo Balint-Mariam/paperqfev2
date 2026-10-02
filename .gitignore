@@ -6,3 +6,4 @@ replication/outputs/data/
 replication/outputs/cache/
 *.zip
 *.zip.part*
+replication/outputs/logs/

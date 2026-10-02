@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/04_economic_signals_and_exit_recovery.py."""
+"""Two-session forecasts and entry-independent signal selection."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path
@@ -37,7 +37,7 @@ def arima_native(series,order,params,origins,horizon):
     predicted_state[:,t+1] is conditional on observations through t. The
     time-invariant transition propagates it to t+2. It is NOT the in-sample
     one-step forecast at t+2, which would incorporate the t+1 observation.
-    Public native dynamic predictions are checked independently in audits.
+    Public native dynamic predictions are checked independently in tests.
     """
     model=S2.arima_model(series.to_numpy(),order);res=model.filter(np.asarray(params))
     if not res.filter_results.time_invariant: raise ValueError('ARIMA representation must be time invariant')

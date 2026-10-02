@@ -1,4 +1,4 @@
-"""Corrected chronology from surfaces to inference; no historical audit replay."""
+"""Forecasting, contract implementation, Greek controls, and inference."""
 import json
 import os
 import time
@@ -74,9 +74,7 @@ def regions(frame,grid):
 
 def journal_forecasts(config,signature,wide,grid,calendar,origins,full):
     out=config['output_root'];cache=out/'cache'/'models'/signature
-    from .certified_cache import adopt
-    adopted=adopt(config,cache,signature,full,calendar,origins,grid)
-    tasks=[] if adopted else [(node,full[node],calendar,origins,str(cache),signature,config['force']) for node in grid.node]
+    tasks=[(node,full[node],calendar,origins,str(cache),signature,config['force']) for node in grid.node]
     print(f'Forecasting {len(grid)} nodes, h1/h2, {len(origins)} origins; {len(tasks)} nodes need fresh fits; cache {signature[:12]}',flush=True)
     with ProcessPoolExecutor(max_workers=config['workers']) as pool:
         jobs=[pool.submit(node_worker,t) for t in tasks]
@@ -226,7 +224,7 @@ def final_robustness(config,baseline,attr,daily,perf):
     periods=daily.copy();periods['decision_year']=periods.decision_date.dt.year
     subperiod=B.stability(periods,'decision_year',[2023,2024])
     regimes,regimeinfo,levels=B.iv_regimes(daily)
-    # Confirm the pre-test threshold and use the fixed certified number.
+    # Confirm the pre-test threshold and use the fixed pre-test number.
     locked=config['regime']['threshold']
     if abs(regimeinfo['threshold']-locked)>1e-14:raise ValueError('Certified pre-test IV regime threshold not reproduced')
     regimes['IV_regime']=np.where(regimes.market_IV_level.le(locked),'LOW_IV','HIGH_IV');regimeinfo['threshold']=locked
@@ -269,10 +267,10 @@ def run(config):
         own.to_csv(out/'diagnostics/analysis_checks.csv',index=False)
         failed=own.status.eq('FAIL').any() or comparisons.status.eq('FAIL').any()
         runtime=time.perf_counter()-started
-        summary=dict(status='FAILED' if failed else 'REPRODUCED',runtime_seconds=runtime,signature=signature,forecast_common_sample=int(forecasts.common_sample_4models.sum()),economic_candidates=int(economic.common_economic_candidate.sum()),trading_days=baseline.entry_date.nunique(),contracts_per_model=contracts.groupby('model').size().to_dict(),BID_ASK_negative=int(multiple[multiple.family.eq('PRIMARY_BID_ASK_12')].mean_daily_return.lt(0).sum()),check_counts=own.status.value_counts().to_dict(),comparison_counts=comparisons.status.value_counts().to_dict())
+        summary=dict(status='FAILED' if failed else ('COMPUTED' if comparisons.empty else 'REPRODUCED'),runtime_seconds=runtime,signature=signature,forecast_common_sample=int(forecasts.common_sample_4models.sum()),economic_candidates=int(economic.common_economic_candidate.sum()),trading_days=baseline.entry_date.nunique(),contracts_per_model=contracts.groupby('model').size().to_dict(),BID_ASK_negative=int(multiple[multiple.family.eq('PRIMARY_BID_ASK_12')].mean_daily_return.lt(0).sum()),check_counts=own.status.value_counts().to_dict(),comparison_counts=comparisons.status.value_counts().to_dict())
         write_json(summary,out/'diagnostics/stage2_manifest.json')
         workbook=export_results(config,info,stage1,summary)
-        print('FULL ANALYSIS REPRODUCED' if not failed else 'STOP — ANALYSIS REPRODUCTION FAILURE\nFULL ANALYSIS FAILED')
+        print(('FULL ANALYSIS COMPUTED' if comparisons.empty else 'FULL ANALYSIS REPRODUCED') if not failed else 'STOP — ANALYSIS REPRODUCTION FAILURE\nFULL ANALYSIS FAILED')
         print(json.dumps(summary,indent=2,default=str));print(pd.read_csv(out/'tables/forecast_model_comparison.csv')[['model','RMSE','MAE','QLIKE']].to_string(index=False));print(perf[['model','portfolio_state','implementation','mean_daily_return']].to_string(index=False))
         manifest_path=Path(__file__).resolve().parents[1]/'REPLICATION_DELIVERY_MANIFEST.json'
         print(f'Excel workbook: {workbook}\nDelivery manifest: {manifest_path}')

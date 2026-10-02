@@ -1,7 +1,7 @@
 {
   "raw_options_file": "inputs/options_eod_all.csv",
   "rates_file": "inputs/div yield and rfr.csv",
-  "reference_root": ".",
+  "reference_root": "manifests/expected_data",
   "output_root": "outputs",
   "random_seed": 42,
   "cleaning": {"chunksize": 200000, "t_min_days": 14, "t_max_years": 1.0, "spread_rel_max": 0.2, "lower_bound_tolerance": 0.0001, "rate_annualization_days": 252},

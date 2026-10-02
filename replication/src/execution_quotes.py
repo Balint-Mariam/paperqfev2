@@ -1,4 +1,4 @@
-"""Frozen functions extracted from paper_qfe/05_execution_quote_layer.py."""
+"""Exact-contract exit books and execution eligibility."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

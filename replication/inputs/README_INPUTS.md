@@ -1,13 +1,10 @@
-# Bundled inputs
+# Inputs
 
-The two CSV files are the direct inputs to the replication scripts:
-- `options_eod_all.csv`: raw option observations (approximately 9.15 GB).
-- `div yield and rfr.csv`: dividend yields and risk-free rates.
+The scripts read `options_eod_all.csv` (raw option records) and
+`div yield and rfr.csv` (daily dividend yields and maturity-specific rates).
+The four XLSX files are original supporting source workbooks. They are supplied
+for inspection; the scripts use the CSV inputs directly.
 
-The four XLSX files are original supporting source workbooks, included unchanged
-for inspection. The pipeline uses the CSV inputs rather than reading these
-workbooks. No new conversion or recalculation was applied to the inputs.
-
-`INPUTS_MANIFEST.json` lists file sizes and SHA256 checksums. Both CSV checksums
-match the inputs used in the recorded Stage 1 run. Copying inputs into the package
-does not resolve the documented Stage 2 numerical reproduction failure.
+All six input files are unchanged copies of the original inputs. Their roles,
+byte sizes, and SHA256 values are in `INPUTS_MANIFEST.json`. The raw options CSV
+is approximately 9.15 GB and is included in the complete release download.

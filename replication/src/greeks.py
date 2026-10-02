@@ -1,4 +1,4 @@
-"""Frozen functions extracted from compute_portfolio_greeks.py."""
+"""European option sensitivities."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path

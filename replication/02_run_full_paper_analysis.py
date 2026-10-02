@@ -1,4 +1,4 @@
-"""Run the corrected frozen paper design after the upstream reproduction gate."""
+"""Run forecasting, real-contract portfolios, Greeks, and statistical evaluation."""
 import os
 os.environ['OPENBLAS_NUM_THREADS']='1'
 os.environ['MKL_NUM_THREADS']='1'

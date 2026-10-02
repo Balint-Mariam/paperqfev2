@@ -1,4 +1,4 @@
-"""Frozen functions extracted from clean date.py."""
+"""Option quote eligibility, rate interpolation, and lower price bounds."""
 from __future__ import annotations
 import sys, os, json, time, inspect, hashlib, warnings, logging, itertools
 from pathlib import Path
