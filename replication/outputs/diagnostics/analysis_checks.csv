@@ -1,0 +1,25 @@
+check_name,status,observed,reference,max_abs_difference,tolerance
+common_forecasts_finite,PASS,True,True,0.0,0.0
+signal_selection_ignores_future_IV,PASS,True,True,0.0,0.0
+same_candidates_all_three_models,PASS,True,True,0.0,0.0
+entry_side_half_budgets,PASS,True,True,0.0,0.0
+contract_netting_signed_conservation,PASS,True,True,0.0,0.0
+no_duplicate_active_contracts,PASS,True,True,0.0,0.0
+BASE_exit_coverage_after_calendar,PASS,True,True,0.0,0.0
+exact_exit_identity,PASS,True,True,0.0,0.0
+mid_price_identity,PASS,"shape=(22804,)","shape=(22804,)",0.0,1e-10
+bid_ask_spread_accounting,PASS,"shape=(22804,)","shape=(22804,)",4.529709940470639e-14,1e-10
+DGT_identity,PASS,"shape=(22804,)","shape=(22804,)",1.7763568394002505e-15,1e-10
+full_DGT_coverage,PASS,True,True,0.0,0.0
+DGVT_identity,PASS,"shape=(13153,)","shape=(13153,)",1.7763568394002505e-15,1e-10
+entry_controls_do_not_leverage,PASS,True,True,0.0,0.0
+entry_delta_neutral,PASS,"shape=(2448,)","shape=(2448,)",0.0,1e-10
+entry_vega_balanced,PASS,"shape=(2448,)","shape=(2448,)",1.9895196601282805e-13,1e-10
+normalization_mid,PASS,"shape=(4896,)","shape=(4896,)",0.0,1e-12
+normalization_exec,PASS,"shape=(4896,)","shape=(4896,)",0.0,1e-12
+twelve_test_family_MID,PASS,12,12,0.0,0.0
+twelve_test_family_BID_ASK,PASS,12,12,0.0,0.0
+twelve_BID_ASK_negative,PASS,12,12,0.0,0.0
+nominal_1545_timezone_and_fills,WARNING,inherited,frozen limitation,,0.0
+frictionless_underlying_hedge_proxy,WARNING,inherited,frozen limitation,,0.0
+conditional_DGVT_diagnostic_subset,WARNING,inherited,frozen limitation,,0.0

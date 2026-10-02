@@ -1,0 +1,4 @@
+model,n_contracts,all_finite_pct,quality_valid_pct,n_invalid_vega,n_invalid_delta,n_implausible_gamma,Delta_finite_pct,Delta_legacy_max_abs_error,Gamma_finite_pct,Gamma_legacy_max_abs_error,Vega_finite_pct,Vega_legacy_max_abs_error,Theta_finite_pct,Theta_legacy_max_abs_error
+arima,7805,100.0,100.0,0,0,0,100.0,0.0,100.0,4.336808689942018e-19,100.0,0.0,100.0,0.0
+ridge,7362,100.0,100.0,0,0,0,100.0,0.0,100.0,4.336808689942018e-19,100.0,0.0,100.0,0.0
+xgboost,7637,100.0,100.0,0,0,0,100.0,0.0,100.0,4.336808689942018e-19,100.0,0.0,100.0,0.0

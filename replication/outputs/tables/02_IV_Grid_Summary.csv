@@ -1,0 +1,14 @@
+metric,value
+raw_rows,69596970
+clean_rows,6713294
+valid_IV_rows,6713293
+grid_dates,2808
+grid_nodes,500
+potential_grid_observations,1404000
+non_missing_grid_observations,992765
+coverage_mean,0.7070975783475784
+coverage_median,0.73
+coverage_min,0.392
+coverage_max,0.874
+first_date,2013-10-01 00:00:00
+last_date,2024-12-31 00:00:00

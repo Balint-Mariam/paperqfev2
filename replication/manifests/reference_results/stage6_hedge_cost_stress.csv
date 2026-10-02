@@ -1,0 +1,25 @@
+model,portfolio_state,bps_per_side,bps_round_trip,n_days,mean_MID_after_hypothetical_cost,total_MID_pnl_after_hypothetical_cost,mean_BID_ASK_proxy_after_hypothetical_cost,interpretation
+arima,DELTA_NEUTRAL,0.5,1.0,408,-8.912452715210168e-05,-9.129132743020756,-0.010251714980672936,illustrative stress only; no strategy/cost estimate selected
+arima,DELTA_NEUTRAL,1.0,2.0,408,-0.00039554719295745237,-23.0088962977704,-0.010558275682203142,illustrative stress only; no strategy/cost estimate selected
+arima,DELTA_NEUTRAL,2.0,4.0,408,-0.0010083925245681536,-50.76842340726968,-0.011171397085263558,illustrative stress only; no strategy/cost estimate selected
+arima,DELTA_NEUTRAL,5.0,10.0,408,-0.002846928519400257,-134.0470047357675,-0.013010761294444801,illustrative stress only; no strategy/cost estimate selected
+arima,VEGA_BALANCED_DELTA_NEUTRAL,0.5,1.0,408,9.53461096965775e-05,-3.002870211065094,-0.010155439072739381,illustrative stress only; no strategy/cost estimate selected
+arima,VEGA_BALANCED_DELTA_NEUTRAL,1.0,2.0,408,-0.00021215059640537553,-14.173589720721374,-0.010462935088673166,illustrative stress only; no strategy/cost estimate selected
+arima,VEGA_BALANCED_DELTA_NEUTRAL,2.0,4.0,408,-0.0008271440086092815,-36.51502874003393,-0.011077927120540737,illustrative stress only; no strategy/cost estimate selected
+arima,VEGA_BALANCED_DELTA_NEUTRAL,5.0,10.0,408,-0.002672124245221,-103.5393457979716,-0.012922903216143446,illustrative stress only; no strategy/cost estimate selected
+ridge,DELTA_NEUTRAL,0.5,1.0,408,-0.00021440297278493172,-9.751366295322942,-0.01152038294946896,illustrative stress only; no strategy/cost estimate selected
+ridge,DELTA_NEUTRAL,1.0,2.0,408,-0.000634048339189904,-26.664125915153555,-0.01194038361267518,illustrative stress only; no strategy/cost estimate selected
+ridge,DELTA_NEUTRAL,2.0,4.0,408,-0.0014733390719998483,-60.489645154814795,-0.012780384939087612,illustrative stress only; no strategy/cost estimate selected
+ridge,DELTA_NEUTRAL,5.0,10.0,408,-0.003991211270429682,-161.96620287379847,-0.015300388918324912,illustrative stress only; no strategy/cost estimate selected
+ridge,VEGA_BALANCED_DELTA_NEUTRAL,0.5,1.0,408,-0.0006985978212602922,-23.139011533303638,-0.012412577066372511,illustrative stress only; no strategy/cost estimate selected
+ridge,VEGA_BALANCED_DELTA_NEUTRAL,1.0,2.0,408,-0.001113963548841716,-36.20264857179859,-0.01282798279992607,illustrative stress only; no strategy/cost estimate selected
+ridge,VEGA_BALANCED_DELTA_NEUTRAL,2.0,4.0,408,-0.0019446950040045642,-62.3299226487885,-0.013658794267033189,illustrative stress only; no strategy/cost estimate selected
+ridge,VEGA_BALANCED_DELTA_NEUTRAL,5.0,10.0,408,-0.004436889369493107,-140.7117448797582,-0.01615122866835455,illustrative stress only; no strategy/cost estimate selected
+xgboost,DELTA_NEUTRAL,0.5,1.0,408,-0.000205074472441967,-10.338456506719044,-0.010449424855489683,illustrative stress only; no strategy/cost estimate selected
+xgboost,DELTA_NEUTRAL,1.0,2.0,408,-0.0005271989026733305,-27.581378825540533,-0.010771677462218441,illustrative stress only; no strategy/cost estimate selected
+xgboost,DELTA_NEUTRAL,2.0,4.0,408,-0.0011714477631360573,-62.06722346318351,-0.01141618267567596,illustrative stress only; no strategy/cost estimate selected
+xgboost,DELTA_NEUTRAL,5.0,10.0,408,-0.0031041943445242384,-165.52475737611246,-0.013349698316048517,illustrative stress only; no strategy/cost estimate selected
+xgboost,VEGA_BALANCED_DELTA_NEUTRAL,0.5,1.0,408,-0.0003504466090796943,-11.450923983435773,-0.010705736552010016,illustrative stress only; no strategy/cost estimate selected
+xgboost,VEGA_BALANCED_DELTA_NEUTRAL,1.0,2.0,408,-0.0006629833602688286,-25.580496475974595,-0.01101826945137188,illustrative stress only; no strategy/cost estimate selected
+xgboost,VEGA_BALANCED_DELTA_NEUTRAL,2.0,4.0,408,-0.0012880568626470969,-53.83964146105224,-0.011643335250095602,illustrative stress only; no strategy/cost estimate selected
+xgboost,VEGA_BALANCED_DELTA_NEUTRAL,5.0,10.0,408,-0.0031632773697819008,-138.61707641628516,-0.013518532646266774,illustrative stress only; no strategy/cost estimate selected

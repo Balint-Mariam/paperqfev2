@@ -1,0 +1,763 @@
+[
+  {
+    "module": "cleaning",
+    "function": "interpolate_rates",
+    "source": "clean date.py",
+    "source_line": 27,
+    "source_sha256": "02d7e50d56f66cbb766a1e2b030740abdaca91b907bdb025fb71d80b70189b93",
+    "function_sha256": "71817a253fc94c76752de477b8cf5c40113cfd6d131aff7f6b67ee81da2b85f0"
+  },
+  {
+    "module": "cleaning",
+    "function": "prepare_rates_df",
+    "source": "clean date.py",
+    "source_line": 41,
+    "source_sha256": "02d7e50d56f66cbb766a1e2b030740abdaca91b907bdb025fb71d80b70189b93",
+    "function_sha256": "2184d3c860608d84bfc4b71f6cef40e47ff7baaed08af84ef156aec2910af818"
+  },
+  {
+    "module": "cleaning",
+    "function": "lower_bound_price",
+    "source": "clean date.py",
+    "source_line": 67,
+    "source_sha256": "02d7e50d56f66cbb766a1e2b030740abdaca91b907bdb025fb71d80b70189b93",
+    "function_sha256": "2ad93c86c9f3855ed00b33885b02c10f7470a7330919f1241890a76766cc155b"
+  },
+  {
+    "module": "cleaning",
+    "function": "apply_basic_filters",
+    "source": "clean date.py",
+    "source_line": 75,
+    "source_sha256": "02d7e50d56f66cbb766a1e2b030740abdaca91b907bdb025fb71d80b70189b93",
+    "function_sha256": "6bf47865742f1044d31d68eee5595d2339f7987ec725ef371390d040a1e69ea1"
+  },
+  {
+    "module": "implied_volatility",
+    "function": "bs_price",
+    "source": "iv.py",
+    "source_line": 13,
+    "source_sha256": "841cf01c64a9bdc3a0772cf9142ef77973ca6f402d5885fa7077b1378eca8141",
+    "function_sha256": "631475ccfbdf861290f740caa733f0d1c6bf6b82f2b675bba1e793545bbfcc85",
+    "computational_transform": "scipy.stats.norm.cdf -> scipy.special.ndtr; identical CDF kernel, unchanged pricing arithmetic and Brent solver; equivalence test in tests/test_upstream.py"
+  },
+  {
+    "module": "implied_volatility",
+    "function": "implied_vol",
+    "source": "iv.py",
+    "source_line": 25,
+    "source_sha256": "841cf01c64a9bdc3a0772cf9142ef77973ca6f402d5885fa7077b1378eca8141",
+    "function_sha256": "6408714e52596879b676d0a8242f6ecc705a94579c3541d9348569588fe15b1a"
+  },
+  {
+    "module": "implied_volatility",
+    "function": "compute_chunk_iv",
+    "source": "iv.py",
+    "source_line": 71,
+    "source_sha256": "841cf01c64a9bdc3a0772cf9142ef77973ca6f402d5885fa7077b1378eca8141",
+    "function_sha256": "4e2f465dd80ddcc1663055c3f9441346b35d217dc8e2c0557dda2906ae561762"
+  },
+  {
+    "module": "iv_surface",
+    "function": "prepare_points",
+    "source": "build_iv_grid_dataset.py",
+    "source_line": 28,
+    "source_sha256": "9158e7c58a2ba9572160abbca88e95b4d113d6f60e4f4d97ad37ec8bfa00d7c2",
+    "function_sha256": "6dcb282713faf07886217dbbd51c639986b2f7afbceb6fe993f22e572eb88251"
+  },
+  {
+    "module": "iv_surface",
+    "function": "build_grid_and_features",
+    "source": "build_iv_grid_dataset.py",
+    "source_line": 118,
+    "source_sha256": "9158e7c58a2ba9572160abbca88e95b4d113d6f60e4f4d97ad37ec8bfa00d7c2",
+    "function_sha256": "e89fb929b6814d3a09856f35033b86444f18315de70729f7d50034fb0c210cb8"
+  },
+  {
+    "module": "iv_surface",
+    "function": "interpolate_day_surface",
+    "source": "build_iv_grid_dataset.py",
+    "source_line": 149,
+    "source_sha256": "9158e7c58a2ba9572160abbca88e95b4d113d6f60e4f4d97ad37ec8bfa00d7c2",
+    "function_sha256": "7220b9151371bc15dcb2f8ba0b27a89d2956d230932f84dc6c4cb70ff3068c79"
+  },
+  {
+    "module": "iv_surface",
+    "function": "smooth_surface",
+    "source": "build_iv_grid_dataset.py",
+    "source_line": 15,
+    "source_sha256": "9158e7c58a2ba9572160abbca88e95b4d113d6f60e4f4d97ad37ec8bfa00d7c2",
+    "function_sha256": "849ad15681d21c04ef660217523c8d324eef536672102eec163cf3671183b6b7"
+  },
+  {
+    "module": "iv_surface",
+    "function": "parse_dates",
+    "source": "build_iv_grid_dataset.py",
+    "source_line": 11,
+    "source_sha256": "9158e7c58a2ba9572160abbca88e95b4d113d6f60e4f4d97ad37ec8bfa00d7c2",
+    "function_sha256": "f12556a540459ce933fefa35a4ca69fa47f321a8f1baa933cfeb479e79c518cc"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "features",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 86,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "35a3347f31266c90fc321e9e9084060528a1a4c3c1c353a7eab475af1ef1ee4d"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "fit_forecasts",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 103,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "1478b552e04fdae04f5b06374b28d63fdec9b8e33810dccdc7caa042b51bd45f"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "normalize",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 195,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "197bd3a800611b6b3cd59145e466d5bc935d075875497e5384bdfccd38f38077"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "load_day",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 265,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "72fbfe7bb7dc1407cec3ece976d559d6ef4a2904bdc43811b17e1c16931a797c"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "valid_market",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 280,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "5e9f48c84efb98e7a6fe113ba02d83accd6158db53a8b6446f3e65686634c5f1"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "bs_greeks",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 289,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "e9679a9ef1527f44dd514924feb040e7ce2b201abef4b5f70546fdf0b2b31f80"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "map_entry",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 305,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "9cdd78294d3d23193f5871342bab1d72f659510fb45725bef349e5d9abc2c8e4"
+  },
+  {
+    "module": "contract_mapping",
+    "function": "lock_weights",
+    "source": "paper_qfe/02_repair_timing_and_signals.py",
+    "source_line": 331,
+    "source_sha256": "10237fa0c9707526062bf3c8fff74074a30f43a47f471e200df486dd7ccaaefb",
+    "function_sha256": "84a6d3b8b5501d76cf460a8cf1ea57d3b96910a8c6034302fcdfe5549e4a695e"
+  },
+  {
+    "module": "forecasting",
+    "function": "features",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 73,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "3e68ff6d1896f9ed653d8584a486cd38aef21d68d5d415a2e280ce5f32dbf19e"
+  },
+  {
+    "module": "forecasting",
+    "function": "masks",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 81,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "99cacac3c87b4185a1b52eb753819bb126afa4736a6dd7057eec6807ebf798f7"
+  },
+  {
+    "module": "forecasting",
+    "function": "ridge_pipeline",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 90,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "ec7d3577e6920225d771483085318d9a002ae8923d10cbdc9367c636e51b70e3"
+  },
+  {
+    "module": "forecasting",
+    "function": "preprocessing_evidence",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 94,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "1a48ad66f7c168140ece4a03d4c226085adfe63107cc4ae227bb36ffc2671af7"
+  },
+  {
+    "module": "forecasting",
+    "function": "score",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 105,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "b12bdc27e99cf8b62320f4ecfaf5c0ca5c7ed00509cf156ca815b3b2526bf259"
+  },
+  {
+    "module": "forecasting",
+    "function": "arima_model",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 110,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "86e395ca962183bb0c97d9631bf4f4913b4406ddaa4a3bbe20c6dd996322c0ec"
+  },
+  {
+    "module": "forecasting",
+    "function": "filtered_prediction",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 114,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "fc0f6f2598e5fc2ec54262c883ad948225eddb883bd6ba794f5b4ab70d7d462b"
+  },
+  {
+    "module": "forecasting",
+    "function": "fit_node",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 126,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "4cd6e82b3977d0ace644b20014e1fd5111c3bf0981da1a2764de909309cf6ee0"
+  },
+  {
+    "module": "forecasting",
+    "function": "annotate",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 213,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "eba9b56e20d358751fef041a48d0ffe3d8090930fa53452f4742ed1f5cf2ff63"
+  },
+  {
+    "module": "forecasting",
+    "function": "qlike",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 263,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "5a67e4f2a88474a4cb3de4cf13a379ac04dfd2ce8eda8cfec6080e57d2421438"
+  },
+  {
+    "module": "forecasting",
+    "function": "metrics",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 271,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "def98e8aa7e87e4d132e45d714ba885466bed4f4201506a8933910918789e96c"
+  },
+  {
+    "module": "forecasting",
+    "function": "hac_mean",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 281,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "9e25aa06d2e589cb728d1bcdfc17e8841580572f7f9da687194486be954565a3"
+  },
+  {
+    "module": "forecasting",
+    "function": "bootstrap_intervals",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 288,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "47cea6f660d037cd343cca94065ebaf618890582ad10948ff1fe26099cc92a54"
+  },
+  {
+    "module": "forecasting",
+    "function": "daily_statistics",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 305,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "27897f3b0abbc593a62585b0953105a563acecbb68ef0944ed0d6c17bb4c7497"
+  },
+  {
+    "module": "forecasting",
+    "function": "inference",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 329,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "c3f193b0ed745a08ddf615b080ba46bf3b7657044b7263430c9cd1e0cb6097b9"
+  },
+  {
+    "module": "forecasting",
+    "function": "draw",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 347,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "9b25b51ced531a66007b3fbce48de38685c47a366f9212590a2d69409770a2e2"
+  },
+  {
+    "module": "forecasting",
+    "function": "table",
+    "source": "paper_qfe/03_forecast_evaluation.py",
+    "source_line": 605,
+    "source_sha256": "99767dc7e3ece878de4197bb74dbbaf6190fd3df002328ad78b12ff8369bb838",
+    "function_sha256": "aa2eccfb43cbe708bcf6213e5d2f0ae1bbff095e987340c92904c325ecd6d4e1"
+  },
+  {
+    "module": "economic_signals",
+    "function": "horizon_features",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 76,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "45d1b1ac8110dab92ba7c8409606604569a082e2e5ba018a7d33b19f500a754c"
+  },
+  {
+    "module": "economic_signals",
+    "function": "horizon_masks",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 81,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "5ada7a3cd59a1225df3beacc9705fa82e5a2895239420e95bd5c7cdf3c40611a"
+  },
+  {
+    "module": "economic_signals",
+    "function": "arima_native",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 89,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "f804ab4d770c03d7a07642615a1e45b142781b50b918884073cc2ff3ce51532b"
+  },
+  {
+    "module": "economic_signals",
+    "function": "fit_h2",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 107,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "20d5d7a70646ac3a07253d49506eb94e206b7557f07ebfd037d5f447dfd8a745"
+  },
+  {
+    "module": "economic_signals",
+    "function": "candidates",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 167,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "dc58a25979be5475ffcf95d63108377430a5ea49d9ccae6ae6cc9ba53b7e2318"
+  },
+  {
+    "module": "economic_signals",
+    "function": "rank_signals",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 178,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "483f354373cc9ee673c66f36c5f73de9ba51e914946793c5037d319d276a0480"
+  },
+  {
+    "module": "economic_signals",
+    "function": "predictive_diagnostics",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 198,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "826c0f8bf3730338c422b44fa7b9f9a5e709138654758b65c499f33283d7f7a3"
+  },
+  {
+    "module": "economic_signals",
+    "function": "net_contracts",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 396,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "e0860418ac08f96ea5a71b940894afc06af99f81914636e2047b3a1b551c4926"
+  },
+  {
+    "module": "economic_signals",
+    "function": "collision_table",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 418,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "f3d18a5c01d07e0dd6a8f8d560e4da62545f7cb3a48a116da991fa7de004d908"
+  },
+  {
+    "module": "economic_signals",
+    "function": "quote_valid",
+    "source": "paper_qfe/04_economic_signals_and_exit_recovery.py",
+    "source_line": 338,
+    "source_sha256": "731bf359c915d7a69dc4dbce28954efa5af86ed1b3dc16e37452e8052c5fe4a9",
+    "function_sha256": "c06f0c76d3147b85671194da69679e7d777dac848d8e6f372cb1961fd42d9785"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "calendar_guard",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 86,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "a0b7b57c42f2eadf0f337b2c7eee1e9400c989326af9375b3e41fbbf64115b60"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "valid_two_sided",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 94,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "795162fbcffd32a2d526cce437561969bc127151ecc0d446bc44cea8a4717847"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "choose_quotes",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 98,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "c27141b51c8ab6521670c503479e240cda5938ed2f4c0378ea99e4364e9d2a92"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "reason_category",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 146,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "167badf9915e4282c2bcead70ff02c008b8691e070077cd1ded290771fc3f79a"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "join_trades",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 159,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "1242ae1280d009d438c82f1ec7094674c6c4fe275b60f565096c62748b94ade6"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "coverage_table",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 175,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "e5bc2a0cab8656bad120976ac7a13af92046969207d70e5e906a1a704f739d09"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "recovery_reasons",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 190,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "30a21e363a0f182884e41b0d8c99a84769002f112ca0db35bc76cfb631499fbb"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "quality_table",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 202,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "67f3145c49a539e3d68d829271813b74cd66fa345764e052d40f9945b77dacd8"
+  },
+  {
+    "module": "execution_quotes",
+    "function": "missingness_table",
+    "source": "paper_qfe/05_execution_quote_layer.py",
+    "source_line": 215,
+    "source_sha256": "d2f6ce86ac0bb0c94572d92dc7d1d308963598cd02b0b573c3f0a29c1781d2ae",
+    "function_sha256": "f8c468f812b038bba8d9aac1cd89650658ed52ca29424786d58267701e6fbc34"
+  },
+  {
+    "module": "portfolio",
+    "function": "economic_calendar",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 58,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "bff834c34cbd81ea162bb5a54e69ad3e574b9877c01ec2c7913ee71b900a0af5"
+  },
+  {
+    "module": "portfolio",
+    "function": "contract_pnl",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 72,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "363ade3cdcf57440b1364a9990d3ba21c6bb4a82f95fc5249f4bff7098f392f7"
+  },
+  {
+    "module": "portfolio",
+    "function": "daily_pnl",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 89,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "0c1dcf0bdccef466c2ea67e47de45a2aae0c7c8b4b7f96260e2dcf03a1ddbbb4"
+  },
+  {
+    "module": "portfolio",
+    "function": "hac",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 105,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "7d20285bd9a418dd0446cef3e907dbb382d7a027103087e9d270fb93dd8b8f47"
+  },
+  {
+    "module": "portfolio",
+    "function": "bootstrap",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 111,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "a5e00570b5fcd12fda9692453a9fde0e4a3abea69ee0153ac23305b4a55e73f9"
+  },
+  {
+    "module": "portfolio",
+    "function": "wealth",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 122,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "43f84774128356fd3b10baa260761ecc87caf906c1cf289a30add6e095ebc84f"
+  },
+  {
+    "module": "portfolio",
+    "function": "performance_tables",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 131,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "4777d1cbc5e3298a6cae7228de5def90abb81cf36768d05abd47ef7ad3b8ccd4"
+  },
+  {
+    "module": "portfolio",
+    "function": "pairwise",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 150,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "40e9957092ddf5b2ad8844ccceb0dd7d0bf2828f614b941a1ff27d5f7e7edf21"
+  },
+  {
+    "module": "portfolio",
+    "function": "wedge_table",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 159,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "3b7424e92f4774fc003fa103c146bcd9ec7591987be25012104bf6564e284869"
+  },
+  {
+    "module": "portfolio",
+    "function": "contribution_table",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 172,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "bbf09bd11ccf7d48c54b19f1e590ced36371d1b296be81748f374e9fade34fca"
+  },
+  {
+    "module": "portfolio",
+    "function": "signal_relation",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 191,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "45bd761f0cefb08c3a6fe676966293b00638f58098aa881c595d858064147bef"
+  },
+  {
+    "module": "portfolio",
+    "function": "figures",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 204,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "30d74cb838ba431df14fede64e533d18f1c60fa3862ba9b3819b486261caa2ef"
+  },
+  {
+    "module": "portfolio",
+    "function": "eligible_gross",
+    "source": "paper_qfe/06_economic_performance.py",
+    "source_line": 260,
+    "source_sha256": "cf03416363fbab4c4eb244c8655399045508f7776bd5ba9073bd26967fd67305",
+    "function_sha256": "4fafc6a8a53b90ac98b1e557a7d20a5e02f63801a797b6ebe9965ae3f709f8fe"
+  },
+  {
+    "module": "greeks",
+    "function": "compute_bs_greeks",
+    "source": "compute_portfolio_greeks.py",
+    "source_line": 235,
+    "source_sha256": "36b89cd2b79b13c27c31266d89e1911643664ffaa23a35a8360a655cfee57585",
+    "function_sha256": "fcf007780098af3d3875315233d3a90b3c1e0c60a1f8542178e199f225c8929e"
+  },
+  {
+    "module": "risk_controls",
+    "function": "greek_quality",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 89,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "f25b26d1d362f79bb1d4aae71cc59c6ff566b8e3059e0462e560ed529b2d2578"
+  },
+  {
+    "module": "risk_controls",
+    "function": "spot_diagnostics",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 110,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "e1fe5f052d24774b750c6ff9e231afb3268861fb27070fcc3282c8c04cb8de4b"
+  },
+  {
+    "module": "risk_controls",
+    "function": "entry_controls",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 126,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "2c04be30602633f6eca4ab52b075e0e9fc35ad1749b00d18c9759fcbb2b87eab"
+  },
+  {
+    "module": "risk_controls",
+    "function": "attribution",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 157,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "adbee440d61650e16d6f45ed0353b816153b022d275d2c794d1140ed674d7a33"
+  },
+  {
+    "module": "risk_controls",
+    "function": "european_price",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 184,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "52e13c8ca55e84c9b2d386c5aa01372a0b42e98718c369b4553c4dd95fb82c7d"
+  },
+  {
+    "module": "risk_controls",
+    "function": "exposure_summary",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 191,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "6f90552f1efcab0f27c56ac871ada57b93c2ac413e131bf0962a4d5725e01935"
+  },
+  {
+    "module": "risk_controls",
+    "function": "attribution_summary",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 200,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "43e6c8c68bfb215a979ab84e88ac6f6e1bc5c38ffc1b28a51cec8b188ed0169a"
+  },
+  {
+    "module": "risk_controls",
+    "function": "portfolios",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 213,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "888e160dacacdb5308898e4da095df64c236ad5ccdaa49b26ea89967b759db21"
+  },
+  {
+    "module": "risk_controls",
+    "function": "performance",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 242,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "90a6ae5c82dd1cce8ceb42697d2044dff6bd49de969fc21b4e3b31c4e8e60be7"
+  },
+  {
+    "module": "risk_controls",
+    "function": "reductions",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 260,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "a06cb1d3aae2ddc11134b3c0e98f2a954e6970a6cb5c907ebe8c2c329f90a878"
+  },
+  {
+    "module": "risk_controls",
+    "function": "signal_alignment",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 273,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "8c2a2cf95ff17ff1724fc53432f99fe99838c199a096105c9e50b421cc66e3e0"
+  },
+  {
+    "module": "risk_controls",
+    "function": "make_figures",
+    "source": "paper_qfe/07_greek_attribution_and_risk_control.py",
+    "source_line": 285,
+    "source_sha256": "8b1f71d3edf7ee571f51ed813375ee1cf4370c973f1425804407cf2b33c5a44b",
+    "function_sha256": "edff443b087eb3ed2738a6348963320acc36dd35a421642a0ab74d6d7fc124d9"
+  },
+  {
+    "module": "robustness",
+    "function": "corrected",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 56,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "037573b66a503e6a1f901614727552c0232989689524b9b52fcb4bd22fcf876f"
+  },
+  {
+    "module": "robustness",
+    "function": "adjust",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 65,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "e7b226b290506d0d2f39a09a4bf383b81c2e55fec97096d0074d9b522433b53f"
+  },
+  {
+    "module": "robustness",
+    "function": "mean_stats",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 69,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "bff8cfb04bb8bb949048508d15967465b48dc4db1e5030e4ed0177764fc00bfd"
+  },
+  {
+    "module": "robustness",
+    "function": "multiple_testing",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 75,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "d91416e41db5b01907f98588052698c651f8b28a9864f56b88f2c13dede61a50"
+  },
+  {
+    "module": "robustness",
+    "function": "paired_effects",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 84,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "be5622b5ea10674406dfe1e009f342cf0bb20bf50306e7cadf1f3498403151d7"
+  },
+  {
+    "module": "robustness",
+    "function": "component_inference",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 95,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "fe4b505c818d6a6b8c8dd503c6aec09aee3f9e40d8b3d6b23b7e93be5353639c"
+  },
+  {
+    "module": "robustness",
+    "function": "normalization",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 103,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "eac3ca6bc75ebdfe382fb8279a22269bb62ab7f65941cfbdb48b2d3680b55bd1"
+  },
+  {
+    "module": "robustness",
+    "function": "hedge_costs",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 116,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "0cb72886f6d53af642e54c9f2c5f8842a33508448d4b5104a19bd0553d2eaacb"
+  },
+  {
+    "module": "robustness",
+    "function": "stability",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 135,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "748415f7442fe59a1b2740ec0626ef6d36be16f92d351f1eff66d5787ead6cc9"
+  },
+  {
+    "module": "robustness",
+    "function": "iv_regimes",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 145,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "526e591b1eb2b82374959d80583e4a118b884ec3d1480713b5866d4ad22eb339"
+  },
+  {
+    "module": "robustness",
+    "function": "inference_sensitivity",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 159,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "1f8ac76a62edba02cb09fa6625a9f6f904cd9fdb592767253e0c4d092037f834"
+  },
+  {
+    "module": "robustness",
+    "function": "chain_tables",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 168,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "f7c8645f08ad493100f566301b3570916c3a68fdfc8643e49dd30c68d1c6df27"
+  },
+  {
+    "module": "robustness",
+    "function": "figures",
+    "source": "paper_qfe/08_final_robustness.py",
+    "source_line": 221,
+    "source_sha256": "912597564387194e261a525f203f5c72c875f9a97bc05715f2cb5dcb9d5220e6",
+    "function_sha256": "afd4f285829c7500acada797aa3ff1d5d9e372a9933191b7bf637e7381321c4d"
+  }
+]

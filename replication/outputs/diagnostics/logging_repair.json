@@ -1,0 +1,7 @@
+{
+  "numerical_status": "FAILED",
+  "first_run_shared_log_close_error": true,
+  "logging_fix": "both streams detached before shared log closes once",
+  "numerical_methods_unchanged": true,
+  "unit_test": "tests/test_logging.py"
+}

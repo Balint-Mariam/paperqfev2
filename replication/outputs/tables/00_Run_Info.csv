@@ -1,0 +1,14 @@
+key,value
+run_timestamp,2026-10-02T14:54:57.434342+00:00
+python_version,"3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]"
+platform,Windows-11-10.0.26200-SP0
+random_seed,42
+raw_input_name,options_eod_all.csv
+raw_input_hash,ed336be97a62f8c89308d33ca51b39572dae7636fde99c0ccb45873bb12e8cc6
+cleaned_data_hash,275c3f6eebc41b9708a858883f6f08784b4c290c62f411507cd0ddb8899cafeb
+iv_grid_hash,42087eda6172e7b39cb0c6a9bf80bc7ce2f1f8987e25b19cd6b93b6c427bdcad
+code_hash,6992819d6fa331b9204f95c63d4ccd8407a61d99e58233ecf124d8be8d23c066
+Stage1_runtime,1263.7609920999967
+Stage2_runtime,1091.2859491000418
+Stage1_status,REPRODUCED
+Stage2_status,FAILED

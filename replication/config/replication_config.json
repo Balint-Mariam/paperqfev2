@@ -1,0 +1,15 @@
+{
+  "raw_options_file": "inputs/options_eod_all.csv",
+  "rates_file": "inputs/div yield and rfr.csv",
+  "reference_root": ".",
+  "output_root": "outputs",
+  "random_seed": 42,
+  "cleaning": {"chunksize": 200000, "t_min_days": 14, "t_max_years": 1.0, "spread_rel_max": 0.2, "lower_bound_tolerance": 0.0001, "rate_annualization_days": 252},
+  "iv": {"chunksize": 50000, "solver": "brentq", "lower": 0.0001, "upper": 5.0, "maxiter": 100, "xtol": 0.000001, "days_per_year": 365},
+  "surface": {"x_min": -0.22, "x_max": 0.18, "x_points": 25, "t_min": 0.08, "t_max": 1.0, "t_points": 20, "method": "linear", "fill_nearest": false, "smooth_sigma": 0.0, "min_points_day": 10, "min_coverage": 0.0},
+  "forecast": {"train_end": "2021-08-12", "fit_end": "2023-04-21", "orders": [[1,0,0],[2,0,0],[1,1,0],[1,0,1],[2,0,1]], "ridge_alphas": [0.01,0.1,1.0,10.0,100.0], "xgboost_grid": [{"n_estimators":200,"max_depth":3,"learning_rate":0.05,"subsample":0.9,"colsample_bytree":0.9},{"n_estimators":300,"max_depth":2,"learning_rate":0.03,"subsample":0.9,"colsample_bytree":0.9}], "xgboost_base": {"objective":"reg:squarederror","tree_method":"hist","random_state":42,"n_jobs":2}, "lags": [1,2,3,5,10], "rolling_window":5,"rolling_min_periods":2,"arima_maxiter":200,"arima_mintrain":60,"feature_mintrain":80,"minimum_validation":20,"min_ic_nodes":20,"bootstrap_reps":2000,"mcs_alpha":0.05},
+  "economic": {"calendar":"XNYS","snapshot":"1545","threshold":0.5,"top_k_per_side":10,"mapping_scales":[0.02,0.05],"side_budget":0.5,"exit_priority":["PROCESSED_1545","RAW_1545_RECOVERED"],"quote_definition":"BASE","states":["ORIGINAL","DELTA_NEUTRAL","VEGA_BALANCED","VEGA_BALANCED_DELTA_NEUTRAL"],"vega_unit":1.0,"theta_days":365,"multiplier":1,"spot_tolerance":0.00000001,"iv_price_tolerance":0.001},
+  "inference": {"alpha":0.05,"hac_lag":5,"hac_sensitivity":[1,5,10],"kernel":"Bartlett","finite_sample_correction":true,"economic_reference":"normal","bootstrap_reps":4000,"blocks":[5,10],"seed":42,"corrections":["Holm","BH"],"primary_family_size":12,"hedge_cost_bps_per_side":[0.5,1,2,5],"decision_years":[2023,2024]},
+  "regime": {"threshold":0.17683139218966898,"cutoff":"2023-04-21","statistic":"daily cross-sectional median observed IV","low_rule":"<= threshold"},
+  "validation": {"data_absolute_tolerance":1e-8,"iv_absolute_tolerance":1e-9,"results_absolute_tolerance":1e-10}
+}

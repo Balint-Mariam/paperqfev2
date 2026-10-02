@@ -1,0 +1,13 @@
+model,metric,lower_95,upper_95,block_length,reps,seed,weighting
+persistence,RMSE,0.011728318396037636,0.014097844144401009,5,2000,42,node-observation weighted; entire date cross-section
+persistence,MAE,0.00794148423992396,0.009427785737866443,5,2000,42,node-observation weighted; entire date cross-section
+persistence,QLIKE,0.011394145045791441,0.015934616721142724,5,2000,42,node-observation weighted; entire date cross-section
+arima,RMSE,0.01021359142053332,0.012600387700473205,5,2000,42,node-observation weighted; entire date cross-section
+arima,MAE,0.007286617413160588,0.008562185500815958,5,2000,42,node-observation weighted; entire date cross-section
+arima,QLIKE,0.008275402807603714,0.011612936653101485,5,2000,42,node-observation weighted; entire date cross-section
+ridge,RMSE,0.01040730630135889,0.012694842797541161,5,2000,42,node-observation weighted; entire date cross-section
+ridge,MAE,0.007521483498689666,0.008758061206209828,5,2000,42,node-observation weighted; entire date cross-section
+ridge,QLIKE,0.008486269289388167,0.011682789846167404,5,2000,42,node-observation weighted; entire date cross-section
+xgboost,RMSE,0.010694658620083298,0.01299530129038331,5,2000,42,node-observation weighted; entire date cross-section
+xgboost,MAE,0.007824601552849988,0.008990288419514592,5,2000,42,node-observation weighted; entire date cross-section
+xgboost,QLIKE,0.008829233617838314,0.011963847627655134,5,2000,42,node-observation weighted; entire date cross-section

@@ -1,0 +1,47 @@
+{
+  "files": [
+    {
+      "path": "inputs/options_eod_all.csv",
+      "size_bytes": 9153533104,
+      "sha256": "ed336be97a62f8c89308d33ca51b39572dae7636fde99c0ccb45873bb12e8cc6",
+      "role": "pipeline_input",
+      "source_copy_verified": true
+    },
+    {
+      "path": "inputs/div yield and rfr.csv",
+      "size_bytes": 468892,
+      "sha256": "d49bd81cf5f0ef172a4d8df1f84ee9b0d2aac086c3aee11c67177187f66d5fd8",
+      "role": "pipeline_input",
+      "source_copy_verified": true
+    },
+    {
+      "path": "inputs/S&P500Index-Dividend-Yield.xlsx",
+      "size_bytes": 282127,
+      "sha256": "be5107f75f8c487b64ff641fd900f26992ddcf9e9ec4f13d03cce31547eed32d",
+      "role": "supporting_source_workbook",
+      "source_copy_verified": true
+    },
+    {
+      "path": "inputs/S&P500Index-Returns (1).xlsx",
+      "size_bytes": 1183517,
+      "sha256": "0563e21ee037fdd02758e0de5cc84088ef78805f86d73d3c6002a1a1a05e7488",
+      "role": "supporting_source_workbook",
+      "source_copy_verified": true
+    },
+    {
+      "path": "inputs/us_tbill_yields_2010_2025-09-30 (1).xlsx",
+      "size_bytes": 130967,
+      "sha256": "76f1f4efa0c0836a416e62f1b42d30806755eb2c9349b516d96e4e61294723f6",
+      "role": "supporting_source_workbook",
+      "source_copy_verified": true
+    },
+    {
+      "path": "inputs/us_tbill_yields_filled.xlsx",
+      "size_bytes": 113874,
+      "sha256": "8c9ad07d4654495a9d9d11f02998e0329a1b09523c78d80af2be103bd460510a",
+      "role": "supporting_source_workbook",
+      "source_copy_verified": true
+    }
+  ],
+  "original_files_preserved": true
+}

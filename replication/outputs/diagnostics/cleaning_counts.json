@@ -1,0 +1,12 @@
+{
+  "input": 69596970,
+  "dropped_basic": 56168748,
+  "dropped_bad_dates": 0,
+  "dropped_t_window": 3680787,
+  "dropped_no_rates": 1522602,
+  "dropped_moneyness": 1151346,
+  "dropped_spread": 316477,
+  "dropped_option_type": 0,
+  "dropped_lower_bound": 43716,
+  "kept_basic": 6713294
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+replication/inputs/options_eod_all.csv
+replication/outputs/data/
+replication/outputs/cache/
+*.zip
+*.zip.part*

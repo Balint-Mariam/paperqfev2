@@ -1,0 +1,25 @@
+{
+  "purpose": "Numerical comparison targets only; never analysis inputs",
+  "sha256": {
+    "forecast_model_comparison.csv": "4a25f651e7512b1eeb3699a43e57902925fc712004c47492bbca2936bd48f5b4",
+    "rank_ic_summary.csv": "2343a056cbf6015193e8e8a08b97ca6f026e57758b746e2d388d9ea8eee0c7ea",
+    "diebold_mariano_results.csv": "fad7c50e509be08b83fac39824755aea4f8c7e60a14a8d101cda55e57935946a",
+    "model_confidence_set.csv": "0a68250f89165e5415c9b5bcd1542574f5d8ccdf4b889a10709e5b4a8911b100",
+    "economic_signal_predictive_summary.csv": "62adb3d566d46a3a8dfacd6e4f8eb3228bedd717e02e1838380b28e09290063d",
+    "stage4_performance_summary.csv": "91d11c13e79d82320a72eb1443876aacccbacf66fa17820c32ffa4f338172c36",
+    "stage5_performance_summary.csv": "ce0e865b7a93379c02e732a52ec6c66e3b75bc914e4255bbb0ad39aea53580fd",
+    "stage5_pnl_attribution_summary.csv": "7947db8eee660beb637d2ccf290ed410a90facd67a843272d24e095b68a68176",
+    "stage5_dgvt_subset_summary.csv": "891c1e43239cf82f7b81f8bf02d6840332c32be8f2fa3b1e5a4526a5180a0e68",
+    "stage6_multiple_testing.csv": "3fb606609ad3e123e5c1b92336c25ca12afebe1ab8287d5994ef8027468ea43b",
+    "stage6_risk_control_effects.csv": "12f4b8d1179bbe76c7f67a7d833bd8156494286077c30a80c7d638e595a11d8d",
+    "stage6_greek_component_inference.csv": "1371c24eaa549cadfdc0770bdc766a79866db15c5feba56602bba728e3dbb972",
+    "stage6_normalization_sensitivity.csv": "6ef32efbc47f7e3d22f514578da592d32da43348714c6c3126f58b6d256b1f22",
+    "stage6_hedge_cost_break_even.csv": "bf5e5a279093c73737e60f246d13d7df36fdda9d294e62dabad6f4c410d04c6e",
+    "stage6_hedge_cost_stress.csv": "7be10e39908aeeacbb8ab22048335a083e0ada1b2c3e8b0ebe9f1cd4c6abbdb9",
+    "stage6_subperiod_stability.csv": "295cbf3d94cb398e0a11fd260a06af65e5214537a0d65d444088cffe647764bc",
+    "stage6_iv_regime_stability.csv": "7bb10d8f978fccfbbd5a115832c932ebd15939349e16c9d7ae30a3999b39c1bb",
+    "stage6_full_chain_summary.csv": "3744a8c48ae1c24fc7be1d0bee35f164439c1978d6bd97ccefe212a0b6915849",
+    "stage6_model_ranking.csv": "5872596358383de71ca04071694dce65be4899886c7493bcda2b2db79312b0ad",
+    "stage6_inference_sensitivity.csv": "c35257505407ab57a5b89ee1dac1c1eed3e3c12e58b9665f2b6fde8fa71e1387"
+  }
+}

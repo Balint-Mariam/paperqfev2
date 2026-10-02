@@ -1,0 +1,4 @@
+model,selected_signals,entry_mapped,unique_net_contract_rows,active_net_contract_rows,evaluated_contract_rows,processed_exits,raw_recovered_exits,final_exit_coverage,calendar_excluded_decision_days,calendar_excluded_entry_days,calendar_excluded_exit_days,trading_days
+arima,8453,8253,7934,7902,7805,4780,3025,1.0,10,5,5,408
+ridge,8460,8260,7544,7451,7362,4115,3247,1.0,10,5,5,408
+xgboost,8460,8260,7794,7731,7637,4258,3379,1.0,10,5,5,408

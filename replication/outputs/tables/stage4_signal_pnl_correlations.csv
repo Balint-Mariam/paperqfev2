@@ -1,0 +1,16 @@
+model,variable_A,variable_B,n_dates,pearson,spearman
+arima,top_minus_bottom,Return_mid,403,-0.05548507245559449,0.014822149968042988
+arima,top_minus_bottom,Return_exec,403,-0.05483423713456937,0.004108025335328614
+arima,Return_mid,Return_exec,408,0.9959697301253572,0.9779357433607396
+arima,predicted_cross_sectional_dispersion,Return_mid,408,0.05907258607662995,0.026400673387585512
+arima,predicted_cross_sectional_dispersion,Return_exec,408,0.05014460748913162,0.01597422638699785
+ridge,top_minus_bottom,Return_mid,403,0.1952282258383444,0.11377356394207622
+ridge,top_minus_bottom,Return_exec,403,0.18635441111870948,0.1140093454551188
+ridge,Return_mid,Return_exec,408,0.9935128261883713,0.973708165495883
+ridge,predicted_cross_sectional_dispersion,Return_mid,408,-0.16090535753200205,-0.11740340814121915
+ridge,predicted_cross_sectional_dispersion,Return_exec,408,-0.16579070281804645,-0.11603444114590383
+xgboost,top_minus_bottom,Return_mid,403,0.14315011498292715,0.12640437592887097
+xgboost,top_minus_bottom,Return_exec,403,0.14671740153467872,0.1312763993706137
+xgboost,Return_mid,Return_exec,408,0.9952282092596397,0.9818613639985709
+xgboost,predicted_cross_sectional_dispersion,Return_mid,408,0.006189527475036468,-0.04645229411517345
+xgboost,predicted_cross_sectional_dispersion,Return_exec,408,0.003553229405773799,-0.045914107038801416

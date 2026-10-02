@@ -1,0 +1,66 @@
+Hashing raw options and rates for reproducible cache identity...
+Cleaning: 5,000,000 raw rows; 95,732 retained; 9.9s
+Cleaning: 10,000,000 raw rows; 463,579 retained; 20.6s
+Cleaning: 15,000,000 raw rows; 978,920 retained; 31.7s
+Cleaning: 20,000,000 raw rows; 1,538,061 retained; 43.2s
+Cleaning: 25,000,000 raw rows; 2,072,094 retained; 54.3s
+Cleaning: 30,000,000 raw rows; 2,584,953 retained; 65.6s
+Cleaning: 35,000,000 raw rows; 3,076,570 retained; 76.8s
+Cleaning: 40,000,000 raw rows; 3,593,543 retained; 88.1s
+Cleaning: 45,000,000 raw rows; 4,254,498 retained; 99.8s
+Cleaning: 50,000,000 raw rows; 4,981,677 retained; 112.0s
+Cleaning: 55,000,000 raw rows; 5,742,113 retained; 126.0s
+Cleaning: 60,000,000 raw rows; 6,431,182 retained; 138.3s
+Cleaning: 65,000,000 raw rows; 6,713,294 retained; 149.3s
+Full options_clean comparison: 1,000,000/6,713,294
+Full options_clean comparison: 2,000,000/6,713,294
+Full options_clean comparison: 3,000,000/6,713,294
+Full options_clean comparison: 4,000,000/6,713,294
+Full options_clean comparison: 5,000,000/6,713,294
+Full options_clean comparison: 6,000,000/6,713,294
+IV: 400,000 rows; 399,999 valid
+IV: 800,000 rows; 799,999 valid
+IV: 1,200,000 rows; 1,199,999 valid
+IV: 1,600,000 rows; 1,599,999 valid
+IV: 2,000,000 rows; 1,999,999 valid
+IV: 2,400,000 rows; 2,399,999 valid
+IV: 2,800,000 rows; 2,799,999 valid
+IV: 3,200,000 rows; 3,199,999 valid
+IV: 3,600,000 rows; 3,599,999 valid
+IV: 4,000,000 rows; 3,999,999 valid
+IV: 4,400,000 rows; 4,399,999 valid
+IV: 4,800,000 rows; 4,799,999 valid
+IV: 5,200,000 rows; 5,199,999 valid
+IV: 5,600,000 rows; 5,599,999 valid
+IV: 6,000,000 rows; 5,999,999 valid
+IV: 6,400,000 rows; 6,399,999 valid
+IV: 6,713,294 rows; 6,713,293 valid
+Full options_with_iv comparison: 1,000,000/6,713,294
+Full options_with_iv comparison: 2,000,000/6,713,294
+Full options_with_iv comparison: 3,000,000/6,713,294
+Full options_with_iv comparison: 4,000,000/6,713,294
+Full options_with_iv comparison: 5,000,000/6,713,294
+Full options_with_iv comparison: 6,000,000/6,713,294
+C:\Users\user\Desktop\Doctorat\iv\replication\src\data_pipeline.py:140: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
+  d=d[d.implied_vol.gt(0)&k.gt(0)&d['T'].between(s['t_min'],s['t_max'])&d.log_moneyness.between(s['x_min'],s['x_max'])]
+STAGE 1 REPRODUCED
+{
+  "raw_rows": 69596970,
+  "clean_rows": 6713294,
+  "valid_IV_rows": 6713293,
+  "grid_dates": 2808,
+  "grid_nodes": 500,
+  "potential_grid_observations": 1404000,
+  "non_missing_grid_observations": 992765,
+  "coverage_mean": 0.7070975783475784,
+  "coverage_median": 0.73,
+  "coverage_min": 0.392,
+  "coverage_max": 0.874,
+  "first_date": "2013-10-01 00:00:00",
+  "last_date": "2024-12-31 00:00:00",
+  "runtime_seconds": 1263.7609920999967,
+  "checks": {
+    "PASS": 642
+  },
+  "output_root": "C:\\Users\\user\\Desktop\\Doctorat\\iv\\replication\\outputs"
+}

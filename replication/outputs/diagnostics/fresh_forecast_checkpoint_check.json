@@ -1,0 +1,9 @@
+{
+  "h1_forecast_persistence": true,
+  "h1_forecast_ridge": true,
+  "h1_forecast_xgboost": true,
+  "h1_forecast_arima": true,
+  "h2_forecast_ridge_h2": true,
+  "h2_forecast_arima_h2": true,
+  "xgb_h2": true
+}

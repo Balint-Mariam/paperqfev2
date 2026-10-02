@@ -1,0 +1,25 @@
+{
+  "tag": "replication-package-v1",
+  "repository": "Balint-Mariam/paperqfev2",
+  "archive_name": "QFE_replication_full.zip",
+  "archive_size_bytes": 2949372966,
+  "archive_sha256": "2e072b1bcd2c7dd3d617b75e062c94bd11a3469ab3947226ecb167f2dfdd9adb",
+  "archive_parts": [
+    {
+      "name": "QFE_replication_full.zip.part001",
+      "size_bytes": 1900000000,
+      "sha256": "d4ad09c5ca2ec39b1cd0a3a6422d2102aaa06c622320d1865d1d3c44006a2749"
+    },
+    {
+      "name": "QFE_replication_full.zip.part002",
+      "size_bytes": 1049372966,
+      "sha256": "25a6c6c9e3bfd2253364f50040b6c241395c9fead007b0b79b9558951e078573"
+    }
+  ],
+  "package_files": 10950,
+  "uncompressed_size_bytes": 10256160556,
+  "replication_status": {
+    "stage1": "REPRODUCED",
+    "stage2": "FAILED"
+  }
+}

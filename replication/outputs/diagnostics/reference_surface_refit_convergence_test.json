@@ -1,0 +1,19 @@
+{
+  "iv_x03_t02": {
+    "new_status": "OK",
+    "reference_status": "OK",
+    "same_status": true,
+    "max_forecast_difference": 0.0
+  },
+  "iv_x01_t04": {
+    "new_status": "FINAL_NONCONVERGENCE",
+    "reference_status": "FINAL_NONCONVERGENCE",
+    "same_status": true
+  },
+  "iv_x08_t05": {
+    "new_status": "OK",
+    "reference_status": "OK",
+    "same_status": true,
+    "max_forecast_difference": 0.0
+  }
+}

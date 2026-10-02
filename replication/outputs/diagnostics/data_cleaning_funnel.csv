@@ -1,0 +1,9 @@
+step,rows_before,rows_removed,rows_after,reason
+basic,69596970,56168748,13428222,"positive book, volume, OI, spot, strike, mid; ask>bid"
+bad_dates,13428222,0,13428222,parseable quote/expiry dates
+t_window,13428222,3680787,9747435,14/365 <= T <= 1
+no_rates,9747435,1522602,8224833,exact rate-date inner join
+moneyness,8224833,1151346,7073487,0.8 <= K/S <= 1.2
+spread,7073487,316477,6757010,relative spread <= 0.2
+option_type,6757010,0,6757010,C or P
+lower_bound,6757010,43716,6713294,mid + 0.0001 >= discounted European lower bound

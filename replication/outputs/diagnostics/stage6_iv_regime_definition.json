@@ -1,0 +1,9 @@
+{
+  "threshold": 0.17683139218966898,
+  "cutoff": "2023-04-21",
+  "pretest_n_dates": 2386,
+  "pretest_first_date": "2013-10-01",
+  "pretest_last_date": "2023-04-21",
+  "rule": "daily cross-sectional median frozen observed IV; threshold pre-test median through validation cutoff; LOW<=threshold, HIGH>threshold",
+  "surface_sha256": "42087eda6172e7b39cb0c6a9bf80bc7ce2f1f8987e25b19cd6b93b6c427bdcad"
+}
